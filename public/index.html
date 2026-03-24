@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="de"><head>
+<html lang="de"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Belle Hair by Mrs. Fati | Friseursalon Meisterbetrieb in Dortmund</title>
+<script>
+    // Sofort beim Laden: Scroll nach oben erzwingen (vor allem auf Mobile)
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -447,10 +452,6 @@
     <!-- AOS Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Scroll nach oben erzwingen beim Laden
-        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-        window.scrollTo(0, 0);
-
         AOS.init({ once: true, offset: 50 });
 
         // Copyright Jahr
@@ -518,8 +519,10 @@
                      }
                  });
              });
-             // Trigger once on page load
-             window.dispatchEvent(new Event('scroll'));
+             // Smooth scroll erst nach Laden aktivieren (verhindert Auto-Scroll auf Mobile)
+             setTimeout(() => {
+                 document.documentElement.style.scrollBehavior = 'smooth';
+             }, 1500);
 
              // Populate Social Gallery (Real FB Images Mix)
              const socialWrapper = document.getElementById("social-swiper-wrapper");
