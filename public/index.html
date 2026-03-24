@@ -7,6 +7,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://elfsightcdn.com/platform.js" async></script>
     <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -114,7 +115,7 @@
 <!-- Hero Section -->
 <section data-aos="fade-up" data-aos-duration="1000" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 z-0 overflow-hidden bg-stone-900">
-<img alt="Luxurious Braids and Dreadlocks" class="w-full h-full object-cover brightness-[0.4] animate-kenburns origin-center" src="images/real_fb_5.jpg" />
+<img alt="Luxurious Braids and Dreadlocks" class="w-full h-full object-cover brightness-[0.4] animate-kenburns origin-center" src="images/hero_salon_premium.png" />
 </div>
 <div class="relative z-10 text-center px-6 max-w-5xl">
 <span class="text-on-primary-fixed-variant text-[10px] uppercase tracking-[0.3em] font-bold mb-8 block opacity-80">Meisterbetrieb · Dortmund</span>
@@ -259,9 +260,7 @@
     <span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Kundenstimmen</span>
     <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-16">Erfahrungen</h2>
     
-    <div id="reviews-container" class="relative">
-        <p class="text-primary italic animate-pulse">Lade echte Bewertungen über unseren sicheren Proxy...</p>
-    </div>
+    <div class="elfsight-app-0dbcf3e6-9f5c-420b-857d-ed85a7319195" data-elfsight-app-lazy></div>
 </div>
 </section>
 <!-- Kontakt & Anfahrt -->
@@ -403,83 +402,7 @@
 
     <!-- Backend Proxy Fetch Logic -->
     <script>
-        async function fetchReviews() {
-            const container = document.getElementById("reviews-container");
-            if(!container) return;
-            
-            try {
-                const response = await fetch("/api/reviews");
-                if(!response.ok) throw new Error("API-Fehler");
-                const data = await response.json();
-                
-                if(data.reviews && data.reviews.length > 0) {
-                    let slidesHTML = "";
-                    data.reviews.forEach(r => {
-                        const stars = Array(r.rating).fill('<span class="material-symbols-outlined" style="font-variation-settings: \\\'FILL\\\' 1;">star</span>').join("");
-                        slidesHTML += '<div class="swiper-slide px-4 md:px-12 py-8">' +
-                                '<div class="flex justify-center gap-1 text-primary mb-6">' + stars + '</div>' +
-                                '<blockquote class="font-headline text-xl md:text-2xl italic leading-relaxed text-on-surface mb-8">' +
-                                    '"' + r.text + '"' +
-                                '</blockquote>' +
-                                '<cite class="not-italic block">' +
-                                    '<span class="text-sm font-bold uppercase tracking-widest text-primary">— ' + r.author_name + '</span>' +
-                                '</cite>' +
-                                '<span class="text-xs text-on-surface-variant block mt-2">' + r.relative_time_description + '</span>' +
-                            '</div>';
-                    });
-
-                    container.innerHTML = 
-                        '<div class="flex items-center justify-between w-full relative group">' +
-                            '<!-- Static Left Arrow -->' +
-                            '<button class="swiper-button-prev-custom z-10 w-12 h-12 flex-shrink-0 items-center justify-center rounded-full border border-outline-variant text-primary hover:bg-surface-container-low transition-colors hidden lg:flex active:scale-95 bg-surface shadow-sm">' +
-                                '<span class="material-symbols-outlined">arrow_back</span>' +
-                            '</button>' +
-                            
-                            '<!-- Swiper Container -->' +
-                            '<div class="swiper mySwiper flex-1 min-w-0 px-2 lg:px-12 pb-12">' +
-                                '<div class="swiper-wrapper lg:items-center">' + slidesHTML + '</div>' +
-                                '<div class="swiper-pagination"></div>' +
-                            '</div>' +
-                            
-                            '<!-- Static Right Arrow -->' +
-                            '<button class="swiper-button-next-custom z-10 w-12 h-12 flex-shrink-0 items-center justify-center rounded-full border border-outline-variant text-primary hover:bg-surface-container-low transition-colors hidden lg:flex active:scale-95 bg-surface shadow-sm">' +
-                                '<span class="material-symbols-outlined">arrow_forward</span>' +
-                            '</button>' +
-                        '</div>';
-
-                    // Initialize Swiper
-                    new Swiper(".mySwiper", {
-                        spaceBetween: 30,
-                        centeredSlides: true,
-                        autoHeight: true,
-                        autoplay: {
-                            delay: 5000,
-                            disableOnInteraction: true,
-                        },
-                        pagination: {
-                            el: ".swiper-pagination",
-                            clickable: true,
-                            dynamicBullets: true,
-                        },
-                        navigation: {
-                            nextEl: ".swiper-button-next-custom",
-                            prevEl: ".swiper-button-prev-custom",
-                        },
-                    });
-
-                } else {
-                    container.innerHTML = '<p class="text-on-surface-variant">Momentan keine Bewertungen verfügbar.</p>';
-                }
-            } catch(e) {
-                console.error("Failed to load reviews:", e);
-                container.innerHTML = '<p class="text-error">Bewertungen konnten nicht geladen werden.</p>';
-            }
-        }
-
         document.addEventListener("DOMContentLoaded", () => {
-             if (window.location.protocol.includes("http")) {
-                 fetchReviews();
-             }
 
              // ScrollSpy for Desktop Navigation Highlight
              const sections = document.querySelectorAll("section[id], footer[id]");
