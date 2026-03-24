@@ -115,7 +115,7 @@
 <!-- Hero Section -->
 <section data-aos="fade-up" data-aos-duration="1000" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
 <div class="absolute inset-0 z-0 overflow-hidden bg-stone-900">
-<img alt="Luxurious Braids and Dreadlocks" class="w-full h-full object-cover brightness-[0.4] animate-kenburns origin-center" src="images/hero_salon_premium.png" />
+<img alt="Luxurious Braids and Dreadlocks" class="w-full h-full object-cover brightness-[0.4] animate-kenburns origin-center" src="images/real_fb_7.jpg" />
 </div>
 <div class="relative z-10 text-center px-6 max-w-5xl">
 <span class="text-on-primary-fixed-variant text-[10px] uppercase tracking-[0.3em] font-bold mb-8 block opacity-80">Meisterbetrieb · Dortmund</span>
@@ -172,9 +172,9 @@
                         Ein umfassendes Portfolio für zeitlose Ästhetik und moderne Trends.
                     </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="services-grid">
 <!-- Schnitt & Styling -->
-<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="schnitt" onclick="toggleService('schnitt')">
 <span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="content_cut">content_cut</span>
 <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Schnitt &amp; Styling</h3>
 <ul class="text-on-surface-variant space-y-3 text-sm">
@@ -182,9 +182,10 @@
 <li>Professionelles Styling</li>
 <li>Dauerwelle &amp; Beratung</li>
 </ul>
+<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
 </div>
 <!-- Braids & Zöpfe -->
-<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="braids" onclick="toggleService('braids')">
 <span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="gesture">gesture</span>
 <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Braids &amp; Zöpfe</h3>
 <ul class="text-on-surface-variant space-y-3 text-sm">
@@ -192,9 +193,10 @@
 <li>Cornrows</li>
 <li>Dreadlocks</li>
 </ul>
+<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
 </div>
 <!-- Haarverlängerung -->
-<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="verlaengerung" onclick="toggleService('verlaengerung')">
 <span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="face_3">face_3</span>
 <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Haarverlängerung</h3>
 <ul class="text-on-surface-variant space-y-3 text-sm">
@@ -202,9 +204,10 @@
 <li>Verkauf von Haarteilen</li>
 <li>Wigs &amp; Perücken</li>
 </ul>
+<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
 </div>
 <!-- Farbe -->
-<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="farbe" onclick="toggleService('farbe')">
 <span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="palette">palette</span>
 <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Farbe &amp; Technik</h3>
 <ul class="text-on-surface-variant space-y-3 text-sm">
@@ -212,6 +215,76 @@
 <li>Strähnen &amp; Highlights</li>
 <li>Haarpflegeprodukte</li>
 </ul>
+<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
+</div>
+</div>
+
+<!-- Akkordeon Preislisten -->
+<div id="price-schnitt" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
+<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
+<div class="flex items-center justify-between mb-8">
+    <h3 class="font-headline text-2xl text-on-surface">Schnitt &amp; Styling — Preisliste</h3>
+    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
+</div>
+<div class="space-y-4">
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Damen — Waschen, Schneiden, Föhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 20 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Herren Haarschnitt</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Mädchen)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">12 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Jungs)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen zupfen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Wimpern färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
+</div>
+</div>
+</div>
+
+<div id="price-braids" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
+<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
+<div class="flex items-center justify-between mb-8">
+    <h3 class="font-headline text-2xl text-on-surface">Braids &amp; Zöpfe — Preisliste</h3>
+    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
+</div>
+<div class="space-y-4">
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids für Männer</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">25 – 150 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids / Rastazöpfe / Knotless / Boho-Braids</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">70 – 250 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Cornrows / Boxerbraids / Festivalfrisur</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 – 150 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Fauxlocs inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">160 – 200 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Boxerbraids für Kinder (bis 12 J.) inkl. Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
+</div>
+<p class="text-on-surface-variant text-xs mt-6 italic">Der Preis hängt von der benötigten Zeit und der Art der Frisur ab.</p>
+</div>
+</div>
+
+<div id="price-verlaengerung" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
+<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
+<div class="flex items-center justify-between mb-8">
+    <h3 class="font-headline text-2xl text-on-surface">Haarverlängerung — Preisliste</h3>
+    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
+</div>
+<div class="space-y-4">
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 40 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">250 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 55 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">285 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 70 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">310 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ponytail inkl. Einarbeitung mit Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">50 – 80 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Tressen hochsetzen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">17 € / Reihe</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Haarverdichtung 50 Gramm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">150 €</span></div>
+</div>
+<p class="text-on-surface-variant text-xs mt-6 italic">Wir empfehlen eine persönliche Beratung für Neukunden.</p>
+</div>
+</div>
+
+<div id="price-farbe" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
+<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
+<div class="flex items-center justify-between mb-8">
+    <h3 class="font-headline text-2xl text-on-surface">Farbe &amp; Technik — Preisliste</h3>
+    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
+</div>
+<div class="space-y-4">
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Bei Frisuren mit Haarverlängerung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 30 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ansatz Farbe</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 35 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Foliensträhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 55 €</span></div>
+    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Dauerwelle</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 59 €</span></div>
+</div>
 </div>
 </div>
 </div>
@@ -488,6 +561,39 @@
                 }
             });
         });
+    </script>
+
+    <!-- Service Akkordeon Logic -->
+    <script>
+        function toggleService(serviceId) {
+            const allPriceLists = document.querySelectorAll('.service-pricelist');
+            const allCards = document.querySelectorAll('.service-card');
+            const targetList = document.getElementById('price-' + serviceId);
+            const targetCard = document.querySelector('[data-service="' + serviceId + '"]');
+            const isOpen = targetList.style.maxHeight !== '0px' && targetList.style.maxHeight !== '';
+
+            // Close all
+            allPriceLists.forEach(list => {
+                list.style.maxHeight = '0px';
+                list.style.opacity = '0';
+            });
+            allCards.forEach(card => {
+                card.classList.remove('ring-2', 'ring-primary', 'shadow-xl', 'scale-[1.02]');
+                card.querySelector('.service-chevron').style.transform = 'rotate(0deg)';
+            });
+
+            // Open clicked (if it wasn't already open)
+            if (!isOpen) {
+                targetList.style.maxHeight = targetList.scrollHeight + 'px';
+                targetList.style.opacity = '1';
+                targetCard.classList.add('ring-2', 'ring-primary', 'shadow-xl', 'scale-[1.02]');
+                targetCard.querySelector('.service-chevron').style.transform = 'rotate(180deg)';
+                // Smooth scroll to the price list
+                setTimeout(() => {
+                    targetList.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 300);
+            }
+        }
     </script>
 
 </body></html>
