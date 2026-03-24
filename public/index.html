@@ -67,24 +67,13 @@
             animation: kenburns 40s ease-out forwards;
         }
 
-        /* Typewriter Animation */
-        @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
+        /* Handwriting Reveal Animation */
+        @keyframes reveal-text {
+            from { clip-path: inset(0 100% 0 0); }
+            to { clip-path: inset(0 0% 0 0); }
         }
-        @keyframes blink-caret {
-            0%, 100% { border-color: transparent; }
-            50% { border-color: rgba(255,255,255,0.7); }
-        }
-        .typewriter-anim {
-            display: inline-block;
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 2px solid rgba(255,255,255,0.7);
-            width: 0;
-            animation:
-                typewriter 3s steps(52) 1.2s forwards,
-                blink-caret 0.75s step-end 1.2s 6;
+        .handwriting-anim {
+            animation: reveal-text 3s ease-out 1.2s both;
         }
 
         .material-symbols-outlined {
@@ -148,8 +137,8 @@
 <div class="flex items-center justify-center w-full mb-8">
     <img src="images/belle_hair_logo_transparent.png" alt="Belle Hair by Mrs. Fati Logo" class="h-48 md:h-96 lg:h-[400px] object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] xl:scale-125 transition-transform duration-1000">
 </div>
-<p class="font-accent text-xl md:text-3xl text-surface-container-highest/90 mb-12 max-w-2xl mx-auto flex justify-center">
-    <span class="typewriter-anim">Spezialistin für Hairextensions, Braids &amp; Boxerbraids</span>
+<p class="font-accent text-xl md:text-3xl text-surface-container-highest/90 mb-12 max-w-2xl mx-auto text-center">
+    <span class="handwriting-anim inline-block">Spezialistin für Hairextensions, Braids &amp; Boxerbraids</span>
 </p>
 <div class="flex flex-col md:flex-row items-center justify-center gap-6">
 <a href="https://www.fresha.com/book-now/prototyp-p9nrt5td/all-offer?share=true&pId=2830784" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-primary-fixed-dim text-on-primary px-10 py-5 rounded-md text-sm font-bold uppercase tracking-[0.2em] shadow-2xl transition-all">
