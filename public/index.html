@@ -5,14 +5,27 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Belle Hair by Mrs. Fati | Friseursalon Meisterbetrieb in Dortmund</title>
 <script>
-    // Sofort beim Laden: Scroll nach oben erzwingen (vor allem auf Mobile)
+    // Scroll-Position sofort auf 0 setzen
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
+    // Hash aus URL entfernen (verhindert Anker-Sprung)
+    if (window.location.hash) {
+        history.replaceState(null, '', window.location.pathname);
+    }
+    // Wiederholtes Zurücksetzen bis Seite stabil ist (gegen Third-Party-Widget-Fokus)
+    var _scrollGuardCount = 0;
+    var _scrollGuard = setInterval(function() {
+        window.scrollTo(0, 0);
+        _scrollGuardCount++;
+        if (_scrollGuardCount > 20) clearInterval(_scrollGuard);
+    }, 100);
+    // Nach 3 Sekunden endgültig stoppen
+    setTimeout(function() { clearInterval(_scrollGuard); }, 3000);
 </script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://elfsightcdn.com/platform.js" async></script>
+<!-- Elfsight wird verzögert geladen um Fokus-Stealing zu verhindern -->
     <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -396,6 +409,7 @@
         style="border:0;"
         allowfullscreen=""
         loading="lazy"
+        tabindex="-1"
         referrerpolicy="no-referrer-when-downgrade"
         title="Belle Hair by Mrs. Fati auf Google Maps">
     </iframe>
@@ -453,6 +467,18 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ once: true, offset: 50 });
+
+        // Elfsight verzögert laden (verhindert Fokus-Stealing beim Seitenaufbau)
+        setTimeout(() => {
+            const s = document.createElement('script');
+            s.src = 'https://elfsightcdn.com/platform.js';
+            s.async = true;
+            document.body.appendChild(s);
+        }, 2500);
+
+        // Scroll Guard stoppen & finalen Reset
+        if (window._scrollGuard) clearInterval(window._scrollGuard);
+        window.scrollTo(0, 0);
 
         // Copyright Jahr
         const yearEl = document.getElementById('copyright-year');
