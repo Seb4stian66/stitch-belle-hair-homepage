@@ -1,0 +1,21 @@
+{
+  "_anleitung": "Fülle fehlende Werte aus und starte danach 'npm run setup' im Terminal.",
+  "QUELLE_WEBSITE_URL": "https://www.facebook.com/bellehairbyfati/",
+  "QUELLE_INSTAGRAM_NAME": "belle_hair_by_mrs.fati",
+  "ZIELGRUPPE": "Premium Damen- und Herren-Salon, spezialisiert auf Braids, Extensions & Flechtfrisuren",
+  "GOOGLE_PLACE_ID": "ChIJqVXP_uEZuUcRh18YxXWS6uE",
+  "GOOGLE_API_KEY": "DEIN_GOOGLE_PLACES_API_KEY",
+"SALON_NAME": "Belle Hair by Mrs. Fati",
+  "SALON_SLOGAN": "Friseursalon Meisterbetrieb in Dortmund",
+  "HERO_EYECATCHER": "Meisterbetrieb · Dortmund",
+  "HERO_SUBTITLE": "Spezialist für Hairextensions, Braids & Boxerbraids",
+  "LOGO_URL": "images/belle_hair_logo_transparent.png",
+  "HERO_BG_URL": "images/real_fb_5.jpg",
+  "ADDRESS_STREET": "Rheinische Str. 30",
+  "ADDRESS_CITY": "44137 Dortmund",
+  "PHONE": "+49 231 22395914",
+  "EMAIL": "HIER_EMAIL_EINTRAGEN",
+  "BOOKING_URL": "https://www.fresha.com/book-now/prototyp-p9nrt5td/all-offer?share=true&pId=2830784",
+  "INSTAGRAM_URL": "https://www.instagram.com/belle_hair_by_mrs.fati/",
+  "FACEBOOK_URL": "https://www.facebook.com/bellehairbyfati/"
+}

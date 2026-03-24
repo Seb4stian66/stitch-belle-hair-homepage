@@ -1,0 +1,16 @@
+{
+  "name": "salon_template_master",
+  "version": "1.0.0",
+  "description": "100% Automated White-Label Salon Website Builder",
+  "main": "index.js",
+  "scripts": {
+    "setup": "node scripts/apply_template.js && node scripts/fetch_images.js",
+    "dev": "vercel dev",
+    "build": "vercel build && vercel deploy --prod"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Belle Hair by Mrs. Fati | Friseursalon Meisterbetrieb in Dortmund</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "background": "#ffffff",
+                "on-background": "#1f2937",
+                "surface": "#ffffff",
+                "on-surface": "#111827",
+                "surface-container-lowest": "#f8f9fa",
+                "surface-container-low": "#f1f5f9",
+                "surface-container": "#e2e8f0",
+                "surface-container-high": "#cbd5e1",
+                "surface-container-highest": "#94a3b8",
+                "on-surface-variant": "#4b5563",
+                "outline": "#94a3b8",
+                "outline-variant": "#e2e8f0",
+                
+                // Brand Yellow/Gold Accent
+                "primary": "#eab308", 
+                "on-primary": "#ffffff",
+                "primary-container": "#fef08a",
+                "on-primary-container": "#713f12",
+                "primary-fixed-dim": "#ca8a04",
+                "inverse-primary": "#ca8a04",
+                
+                "secondary": "#64748b",
+                "on-secondary": "#ffffff",
+                "secondary-container": "#f1f5f9",
+                "on-secondary-container": "#0f172a",
+                
+                "error": "#ef4444",
+                "on-error": "#ffffff",
+              },
+              fontFamily: {
+                "headline": ["Noto Serif", "serif"],
+                "body": ["Manrope", "sans-serif"],
+                "label": ["Manrope", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0px", "lg": "0.125rem", "xl": "0.25rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        @keyframes kenburns {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.15); }
+        }
+        .animate-kenburns {
+            animation: kenburns 40s ease-out forwards;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .brushed-bronze-gradient {
+            background: linear-gradient(135deg, #79542e 0%, #956c44 100%);
+        }
+        .ghost-border {
+            border: 1px solid rgba(212, 196, 183, 0.2);
+        }
+    </style>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-stone-50/80 dark:bg-stone-900/80 backdrop-blur-md transition-colors duration-500 ease-in-out">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-serif tracking-tighter text-stone-800 dark:text-stone-100 uppercase flex items-center h-12">
+    <img src="images/belle_hair_logo_transparent.png" alt="Belle Hair by Mrs. Fati Logo" class="h-full object-contain invert grayscale contrast-200 opacity-80 dark:invert-0 dark:grayscale-0 dark:opacity-100">
+</div>
+<div class="hidden md:flex items-center space-x-12" id="desktop-nav">
+<a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#philosophie">Philosophie</a>
+<a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#leistungen">Leistungen</a>
+<a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#portfolio">Portfolio</a>
+<a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#kontakt">Kontakt</a>
+</div>
+<a href="https://www.fresha.com/book-now/prototyp-p9nrt5td/all-offer?share=true&pId=2830784" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-primary hover:bg-primary-fixed-dim text-on-primary px-8 py-3 rounded-md text-xs font-bold uppercase tracking-widest active:scale-95 transition-all duration-300">
+                Termin buchen
+            </a>
+            <!-- Hamburger Button (nur Mobile) -->
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-[5px] w-10 h-10 p-1" aria-label="Menü öffnen">
+                <span class="block w-6 h-0.5 bg-stone-800 dark:bg-stone-200 transition-all duration-300 origin-center" id="ham-1"></span>
+                <span class="block w-6 h-0.5 bg-stone-800 dark:bg-stone-200 transition-all duration-300" id="ham-2"></span>
+                <span class="block w-6 h-0.5 bg-stone-800 dark:bg-stone-200 transition-all duration-300 origin-center" id="ham-3"></span>
+            </button>
+</div>
+<!-- Mobile Menü Panel -->
+<div id="mobile-menu" class="hidden md:hidden border-t border-stone-200/30 dark:border-stone-700/30">
+    <div class="flex flex-col px-8 py-6 space-y-6">
+        <a class="text-stone-600 dark:text-stone-400 text-sm font-medium uppercase tracking-widest hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="#philosophie">Philosophie</a>
+        <a class="text-stone-600 dark:text-stone-400 text-sm font-medium uppercase tracking-widest hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="#leistungen">Leistungen</a>
+        <a class="text-stone-600 dark:text-stone-400 text-sm font-medium uppercase tracking-widest hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="#portfolio">Portfolio</a>
+        <a class="text-stone-600 dark:text-stone-400 text-sm font-medium uppercase tracking-widest hover:text-stone-900 dark:hover:text-stone-100 transition-colors" href="#kontakt">Kontakt</a>
+        <a href="https://www.fresha.com/book-now/prototyp-p9nrt5td/all-offer?share=true&pId=2830784" target="_blank" rel="noopener noreferrer" class="bg-primary text-on-primary px-6 py-3 rounded-md text-xs font-bold uppercase tracking-widest text-center active:scale-95 transition-all">
+            Termin buchen
+        </a>
+    </div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section data-aos="fade-up" data-aos-duration="1000" class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0 overflow-hidden bg-stone-900">
+<img alt="Luxurious Braids and Dreadlocks" class="w-full h-full object-cover brightness-[0.4] animate-kenburns origin-center" src="images/real_fb_5.jpg" />
+</div>
+<div class="relative z-10 text-center px-6 max-w-5xl">
+<span class="text-on-primary-fixed-variant text-[10px] uppercase tracking-[0.3em] font-bold mb-8 block opacity-80">Meisterbetrieb · Dortmund</span>
+<div class="flex items-center justify-center w-full mb-8">
+    <img src="images/belle_hair_logo_transparent.png" alt="Belle Hair by Mrs. Fati Logo" class="h-48 md:h-96 lg:h-[400px] object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.8)] xl:scale-125 transition-transform duration-1000">
+</div>
+<p class="font-headline italic text-xl md:text-3xl text-surface-container-highest/90 mb-12 max-w-2xl mx-auto">
+    Spezialist für Hairextensions, Braids &amp; Boxerbraids
+</p>
+<div class="flex flex-col md:flex-row items-center justify-center gap-6">
+<a href="https://www.fresha.com/book-now/prototyp-p9nrt5td/all-offer?share=true&pId=2830784" target="_blank" rel="noopener noreferrer" class="bg-primary hover:bg-primary-fixed-dim text-on-primary px-10 py-5 rounded-md text-sm font-bold uppercase tracking-[0.2em] shadow-2xl transition-all">
+                        Online Termin buchen
+                    </a>
+<a class="text-white border-b border-white/30 pb-1 text-sm font-medium uppercase tracking-widest hover:border-white transition-all" href="#leistungen">
+                        Unsere Leistungen
+                    </a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="expand_more">expand_more</span>
+</div>
+</section>
+<!-- Philosophie Section -->
+<section data-aos="fade-up" data-aos-duration="1000" class="py-32 px-8 bg-surface" id="philosophie">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-center">
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] rounded-xl overflow-hidden shadow-2xl">
+<img alt="Salon Interior" class="w-full h-full object-cover" data-alt="Clean minimalist luxury hair salon interior with bronze accents" src="images/real_photo_2.jpg" style="background:#e4e2e1;" alt="Bitte echtes Social-Media-Bild hier einfügen"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-48 h-64 rounded-xl overflow-hidden shadow-xl hidden lg:block border-4 border-surface">
+<img alt="Stylist work" class="w-full h-full object-cover" data-alt="Close up of hair stylist hands working with precision" src="images/real_photo_4.jpg" style="background:#e4e2e1;" alt="Bitte echtes Social-Media-Bild hier einfügen"/>
+</div>
+</div>
+<div class="md:col-span-7 md:pl-12">
+<span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Über Uns</span>
+<h2 class="font-headline text-4xl md:text-6xl text-on-surface mb-8 leading-tight">Handwerk trifft Leidenschaft.</h2>
+<div class="space-y-6 text-on-surface-variant text-lg leading-relaxed max-w-xl">
+<p>Bei Belle Hair verstehen wir unser Handwerk als Kunstform. In unserem Atelier im Herzen der Stadt schaffen wir eine Atmosphäre von Ruhe und exklusiver Betreuung.</p>
+<p>Jede Beratung ist so individuell wie Ihr Haar selbst. Wir nehmen uns die Zeit, Ihre Wünsche zu verstehen und mit modernsten Techniken sowie hochwertigsten Produkten in Perfektion umzusetzen.</p>
+<p class="font-headline italic text-primary">"Qualität ist kein Zufall, sondern das Ergebnis höchster Präzision."</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Leistungen Overview -->
+<section data-aos="fade-up" data-aos-duration="1000" class="py-32 bg-surface-container-low" id="leistungen">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Exklusive Expertise</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface">Unsere Leistungen</h2>
+</div>
+<p class="text-on-surface-variant max-w-xs text-sm uppercase tracking-wider leading-relaxed">
+                        Ein umfassendes Portfolio für zeitlose Ästhetik und moderne Trends.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Schnitt & Styling -->
+<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="content_cut">content_cut</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Schnitt &amp; Styling</h3>
+<ul class="text-on-surface-variant space-y-3 text-sm">
+<li>Damen &amp; Herren Haarschnitt</li>
+<li>Professionelles Styling</li>
+<li>Dauerwelle &amp; Beratung</li>
+</ul>
+</div>
+<!-- Braids & Zöpfe -->
+<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="gesture">gesture</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Braids &amp; Zöpfe</h3>
+<ul class="text-on-surface-variant space-y-3 text-sm">
+<li>Braids &amp; Rastazöpfe</li>
+<li>Cornrows</li>
+<li>Dreadlocks</li>
+</ul>
+</div>
+<!-- Haarverlängerung -->
+<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="face_3">face_3</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Haarverlängerung</h3>
+<ul class="text-on-surface-variant space-y-3 text-sm">
+<li>Extensions &amp; Haarverdichtung</li>
+<li>Verkauf von Haarteilen</li>
+<li>Wigs &amp; Perücken</li>
+</ul>
+</div>
+<!-- Farbe -->
+<div class="bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl transition-all group">
+<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="palette">palette</span>
+<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Farbe &amp; Technik</h3>
+<ul class="text-on-surface-variant space-y-3 text-sm">
+<li>Individuelle Farbveränderung</li>
+<li>Strähnen &amp; Highlights</li>
+<li>Haarpflegeprodukte</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Portfolio Gallery -->
+<section data-aos="fade-up" data-aos-duration="1000" class="py-32 bg-surface" id="portfolio">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Immer Aktuell</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-6">Unser Social Feed</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto text-lg leading-relaxed">
+    Verfolge unsere neuesten Kreationen und Styles tagesaktuell direkt auf Instagram und Facebook.
+</p>
+</div>
+
+<!-- Custom Social Feed Replica (Swipe Carousel) -->
+<div class="w-full relative px-0 md:px-12 group">
+    <div class="swiper socialSwiper rounded-xl overflow-hidden shadow-xl border border-outline-variant bg-surface-container-low">
+        
+        <!-- JavaScript füllt diesen Layer mit 30 Bildern -->
+        <div class="swiper-wrapper" id="social-swiper-wrapper">
+        </div>
+        
+    </div>
+    
+    <!-- Navigation buttons outside the box for cleaner look -->
+    <div class="social-button-next absolute right-0 top-1/2 -translate-y-1/2 !text-primary after:!text-xl border border-outline-variant bg-surface w-12 h-12 rounded-full hover:bg-surface-container-low transition-colors hidden md:flex items-center justify-center shadow-lg cursor-pointer z-10"><span class="material-symbols-outlined">chevron_right</span></div>
+    <div class="social-button-prev absolute left-0 top-1/2 -translate-y-1/2 !text-primary after:!text-xl border border-outline-variant bg-surface w-12 h-12 rounded-full hover:bg-surface-container-low transition-colors hidden md:flex items-center justify-center shadow-lg cursor-pointer z-10"><span class="material-symbols-outlined">chevron_left</span></div>
+</div>
+
+<!-- Fallback Buttons -->
+<div class="mt-16 flex flex-col sm:flex-row justify-center gap-6">
+    <a href="https://www.instagram.com/belle_hair_by_mrs.fati/" target="_blank" class="bg-surface-container-lowest border border-outline-variant text-on-surface hover:text-primary px-8 py-3 rounded-md text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-3">
+        Instagram <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+    </a>
+    <a href="https://www.facebook.com/bellehairbyfati//" target="_blank" class="bg-surface-container-lowest border border-outline-variant text-on-surface hover:text-primary px-8 py-3 rounded-md text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-3">
+        Facebook <span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span>
+    </a>
+</div>
+
+</div>
+</section>
+<!-- Reviews -->
+<section class="py-32 bg-surface-container-lowest overflow-hidden" data-aos="fade-up" data-aos-duration="1000" id="bewertungen">
+<div class="max-w-5xl mx-auto px-8 text-center">
+    <span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Kundenstimmen</span>
+    <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-16">Erfahrungen</h2>
+    
+    <div id="reviews-container" class="relative">
+        <p class="text-primary italic animate-pulse">Lade echte Bewertungen über unseren sicheren Proxy...</p>
+    </div>
+</div>
+</section>
+<!-- Kontakt & Anfahrt -->
+<section data-aos="fade-up" data-aos-duration="1000" class="py-32 bg-surface" id="kontakt">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Kontakt</span>
+<h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-12">Besuchen Sie uns</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Anschrift</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                                    Belle Hair by Mrs. Fati<br/>
+                                    Rheinische Str. 30<br/>
+                                    44137 Dortmund
+                                </p>
+</div>
+<div>
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Kontakt</h4>
+<p class="text-on-surface-variant leading-relaxed">
+                                    <a href="tel:+49 231 22395914" class="hover:text-primary transition-colors">+49 231 22395914</a><br/>
+                                    <a href="mailto:HIER_EMAIL_EINTRAGEN" class="hover:text-primary transition-colors">HIER_EMAIL_EINTRAGEN</a>
+                                </p>
+</div>
+<div class="md:col-span-2">
+<h4 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Öffnungszeiten</h4>
+<div class="grid grid-cols-2 gap-x-8 gap-y-2 text-on-surface-variant">
+<span>Di - Fr:</span><span class="text-right">09:30 — 18:30</span>
+<span>Samstag:</span><span class="text-right">09:30 — 18:00</span>
+<span>Mo &amp; So:</span><span class="text-right">Geschlossen</span>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<a href="https://www.fresha.com/book-now/prototyp-p9nrt5td/all-offer?share=true&pId=2830784" target="_blank" rel="noopener noreferrer" class="inline-block text-center bg-primary hover:bg-primary-fixed-dim text-on-primary px-10 py-4 rounded-md text-xs font-bold uppercase tracking-widest w-full md:w-auto active:scale-95 transition-all">
+                                Terminanfrage senden
+                            </a>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden min-h-[400px] ghost-border">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.9963308657507!2d7.449055476563549!3d51.51328331027365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b919e88cf69261%3A0xa7313bf58b334807!2sBelle%20Hair%20by%20Mrs.Fati%20-%20Dortmund!5e0!3m2!1sde!2sde!4v1774368577910!5m2!1sde!2sde"
+        class="w-full h-full min-h-[400px] block"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Belle Hair by Mrs. Fati auf Google Maps">
+    </iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-stone-100 dark:bg-stone-950 border-t border-stone-200/20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-xl font-serif text-stone-800 dark:text-stone-200 mb-6 uppercase tracking-widest">Belle Hair by Mrs. Fati</div>
+<p class="text-sm font-light text-stone-600 dark:text-stone-400 leading-relaxed">
+                    Ihr exklusives Haar-Atelier für individuelle Beratung und meisterhafte Schnitte.
+                </p>
+</div>
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-stone-500 mb-6 block">Navigation</span>
+<ul class="space-y-4 text-sm font-light text-stone-600 dark:text-stone-400">
+<li><a class="hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#philosophie">Philosophie</a></li>
+<li><a class="hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#leistungen">Leistungen</a></li>
+<li><a class="hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#portfolio">Portfolio</a></li>
+</ul>
+</div>
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-stone-500 mb-6 block">Rechtliches</span>
+<ul class="space-y-4 text-sm font-light text-stone-600 dark:text-stone-400">
+<li><a class="hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Impressum</a></li>
+<li><a class="hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">Datenschutz</a></li>
+<li><a class="hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="#">AGB</a></li>
+</ul>
+</div>
+<div>
+<span class="text-[10px] uppercase tracking-widest font-bold text-stone-500 mb-6 block">Social</span>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="https://www.instagram.com/belle_hair_by_mrs.fati/" target="_blank" aria-label="Instagram">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center hover:text-amber-700 dark:hover:text-amber-300 transition-colors" href="https://www.facebook.com/bellehairbyfati/" target="_blank" aria-label="Facebook">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-12 pb-12">
+<div class="pt-8 border-t border-stone-200/40 text-[10px] uppercase tracking-[0.2em] font-medium text-stone-400 flex flex-col md:flex-row justify-between items-center gap-4">
+<span>© <span id="copyright-year"></span> Belle Hair by Mrs. Fati. Alle Rechte vorbehalten.</span>
+<span class="italic">Designed for excellence.</span>
+</div>
+</div>
+</footer>
+
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 50 });
+
+        // Copyright Jahr
+        const yearEl = document.getElementById('copyright-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // Mobile Menü Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const ham1 = document.getElementById('ham-1');
+        const ham2 = document.getElementById('ham-2');
+        const ham3 = document.getElementById('ham-3');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = !mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden');
+                // Hamburger → X Animation
+                ham1.style.transform = isOpen ? '' : 'rotate(45deg) translate(4px, 4px)';
+                ham2.style.opacity = isOpen ? '1' : '0';
+                ham3.style.transform = isOpen ? '' : 'rotate(-45deg) translate(4px, -4px)';
+            });
+            // Menü bei Link-Klick schliessen
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    ham1.style.transform = '';
+                    ham2.style.opacity = '1';
+                    ham3.style.transform = '';
+                });
+            });
+        }
+    </script>
+
+    <!-- Swiper JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Backend Proxy Fetch Logic -->
+    <script>
+        async function fetchReviews() {
+            const container = document.getElementById("reviews-container");
+            if(!container) return;
+            
+            try {
+                const response = await fetch("/api/reviews");
+                if(!response.ok) throw new Error("API-Fehler");
+                const data = await response.json();
+                
+                if(data.reviews && data.reviews.length > 0) {
+                    let slidesHTML = "";
+                    data.reviews.forEach(r => {
+                        const stars = Array(r.rating).fill('<span class="material-symbols-outlined" style="font-variation-settings: \\\'FILL\\\' 1;">star</span>').join("");
+                        slidesHTML += '<div class="swiper-slide px-4 md:px-12 py-8">' +
+                                '<div class="flex justify-center gap-1 text-primary mb-6">' + stars + '</div>' +
+                                '<blockquote class="font-headline text-xl md:text-2xl italic leading-relaxed text-on-surface mb-8">' +
+                                    '"' + r.text + '"' +
+                                '</blockquote>' +
+                                '<cite class="not-italic block">' +
+                                    '<span class="text-sm font-bold uppercase tracking-widest text-primary">— ' + r.author_name + '</span>' +
+                                '</cite>' +
+                                '<span class="text-xs text-on-surface-variant block mt-2">' + r.relative_time_description + '</span>' +
+                            '</div>';
+                    });
+
+                    container.innerHTML = 
+                        '<div class="flex items-center justify-between w-full relative group">' +
+                            '<!-- Static Left Arrow -->' +
+                            '<button class="swiper-button-prev-custom z-10 w-12 h-12 flex-shrink-0 items-center justify-center rounded-full border border-outline-variant text-primary hover:bg-surface-container-low transition-colors hidden lg:flex active:scale-95 bg-surface shadow-sm">' +
+                                '<span class="material-symbols-outlined">arrow_back</span>' +
+                            '</button>' +
+                            
+                            '<!-- Swiper Container -->' +
+                            '<div class="swiper mySwiper flex-1 min-w-0 px-2 lg:px-12 pb-12">' +
+                                '<div class="swiper-wrapper lg:items-center">' + slidesHTML + '</div>' +
+                                '<div class="swiper-pagination"></div>' +
+                            '</div>' +
+                            
+                            '<!-- Static Right Arrow -->' +
+                            '<button class="swiper-button-next-custom z-10 w-12 h-12 flex-shrink-0 items-center justify-center rounded-full border border-outline-variant text-primary hover:bg-surface-container-low transition-colors hidden lg:flex active:scale-95 bg-surface shadow-sm">' +
+                                '<span class="material-symbols-outlined">arrow_forward</span>' +
+                            '</button>' +
+                        '</div>';
+
+                    // Initialize Swiper
+                    new Swiper(".mySwiper", {
+                        spaceBetween: 30,
+                        centeredSlides: true,
+                        autoHeight: true,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: true,
+                        },
+                        pagination: {
+                            el: ".swiper-pagination",
+                            clickable: true,
+                            dynamicBullets: true,
+                        },
+                        navigation: {
+                            nextEl: ".swiper-button-next-custom",
+                            prevEl: ".swiper-button-prev-custom",
+                        },
+                    });
+
+                } else {
+                    container.innerHTML = '<p class="text-on-surface-variant">Momentan keine Bewertungen verfügbar.</p>';
+                }
+            } catch(e) {
+                console.error("Failed to load reviews:", e);
+                container.innerHTML = '<p class="text-error">Bewertungen konnten nicht geladen werden.</p>';
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+             if (window.location.protocol.includes("http")) {
+                 fetchReviews();
+             }
+
+             // ScrollSpy for Desktop Navigation Highlight
+             const sections = document.querySelectorAll("section[id], footer[id]");
+             const navItems = document.querySelectorAll(".nav-item");
+             
+             window.addEventListener("scroll", () => {
+                 let current = "";
+                 sections.forEach((section) => {
+                     const sectionTop = section.offsetTop;
+                     // Offset for the fixed height of the navbar so it triggers correctly
+                     if (scrollY >= (sectionTop - 250)) {
+                         current = section.getAttribute("id");
+                     }
+                 });
+                 
+                 navItems.forEach((li) => {
+                     // First, reset all to inactive
+                     li.classList.remove("text-amber-700", "dark:text-amber-500", "font-semibold", "border-amber-700/50");
+                     li.classList.add("text-stone-500", "dark:text-stone-400", "border-transparent");
+                     
+                     // Then, activate the current one
+                     if (current && li.getAttribute("href") === `#${current}`) {
+                         li.classList.remove("text-stone-500", "dark:text-stone-400", "border-transparent");
+                         li.classList.add("text-amber-700", "dark:text-amber-500", "font-semibold", "border-amber-700/50");
+                     }
+                 });
+             });
+             // Trigger once on page load
+             window.dispatchEvent(new Event('scroll'));
+
+             // Populate Social Gallery (Real FB Images Mix)
+             const socialWrapper = document.getElementById("social-swiper-wrapper");
+             if(socialWrapper) {
+                 // Using exclusively the successfully downloaded Facebook photos
+                 const images = [
+                     "images/real_fb_2.jpg",
+                     "images/real_photo_1.jpg",
+                     "images/real_fb_3.jpg",
+                     "images/real_photo_2.jpg",
+                     "images/real_fb_4.jpg",
+                     "images/real_fb_5.jpg",
+                     "images/real_photo_3.jpg",
+                     "images/real_fb_6.jpg",
+                     "images/real_fb_7.jpg",
+                     "images/real_photo_5.jpg",
+                     "images/real_fb_8.jpg",
+                     "images/real_fb_9.jpg",
+                     "images/real_fb_10.jpg"
+                 ];
+                 let slidesHTML = "";
+                 for(let i=0; i<images.length; i++) {
+                     let img = images[i];
+                     slidesHTML += '<div class="swiper-slide">' +
+                             '<a href="https://www.instagram.com/belle_hair_by_mrs.fati/" target="_blank" class="relative w-full aspect-[4/5] block group/slide cursor-pointer">' +
+                                 '<img src="' + img + '" alt="Salon Foto" class="w-full h-full object-cover transition-transform duration-700 group-hover/slide:scale-105">' +
+                                 '<div class="absolute inset-0 bg-stone-900/40 opacity-0 group-hover/slide:opacity-100 transition-opacity duration-300 flex items-center justify-center">' +
+                                     '<span class="text-white text-xs font-bold uppercase tracking-widest">Auf Instagram ansehen</span>' +
+                                 '</div>' +
+                             '</a>' +
+                         '</div>';
+                 }
+                 socialWrapper.innerHTML = slidesHTML;
+             }
+             
+             // Initialize Social Carousel
+             new Swiper(".socialSwiper", {
+                slidesPerView: 1.2,
+                spaceBetween: 10,
+                centeredSlides: false,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: true,
+                },
+                navigation: {
+                    nextEl: ".social-button-next",
+                    prevEl: ".social-button-prev",
+                },
+                breakpoints: {
+                    640: { slidesPerView: 2.2, spaceBetween: 15 },
+                    1024: { slidesPerView: 3.5, spaceBetween: 20 },
+                    1280: { slidesPerView: 4, spaceBetween: 20 }
+                }
+            });
+        });
+    </script>
+
+</body></html>
