@@ -252,32 +252,34 @@
 </div>
 </div>
 
-<!-- Akkordeon Preislisten -->
+<!-- Akkordeon Preislisten — werden dynamisch aus Google Sheets geladen -->
 <div id="price-schnitt" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
 <div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
 <div class="flex items-center justify-between mb-8">
     <h3 class="font-headline text-2xl text-on-surface">Schnitt, Styling &amp; Farbe — Preisliste</h3>
     <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
 </div>
-<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-2">Schnitt &amp; Styling</h4>
-<div class="space-y-4">
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Damen — Waschen, Schneiden, Föhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 20 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Herren Haarschnitt</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Mädchen)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">12 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Jungs)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
-</div>
-<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-8">Farbe &amp; Technik</h4>
-<div class="space-y-4">
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Bei Frisuren mit Haarverlängerung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 30 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ansatz Farbe</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 35 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Foliensträhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 55 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Dauerwelle</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 59 €</span></div>
-</div>
-<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-8">Beauty</h4>
-<div class="space-y-4">
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen zupfen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Wimpern färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
+<div id="pricelist-schnitt" class="pricelist-content">
+    <h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-2">Schnitt &amp; Styling</h4>
+    <div class="space-y-4">
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Damen — Waschen, Schneiden, Föhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 20 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Herren Haarschnitt</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Mädchen)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">12 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Jungs)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
+    </div>
+    <h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-8">Farbe &amp; Technik</h4>
+    <div class="space-y-4">
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Bei Frisuren mit Haarverlängerung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 30 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ansatz Farbe</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 35 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Foliensträhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 55 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Dauerwelle</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 59 €</span></div>
+    </div>
+    <h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-8">Beauty</h4>
+    <div class="space-y-4">
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen zupfen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Wimpern färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
+    </div>
 </div>
 </div>
 </div>
@@ -288,14 +290,16 @@
     <h3 class="font-headline text-2xl text-on-surface">Braids &amp; Zöpfe — Preisliste</h3>
     <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
 </div>
-<div class="space-y-4">
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids für Männer</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">25 – 150 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids / Rastazöpfe / Knotless / Boho-Braids</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">70 – 250 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Cornrows / Boxerbraids / Festivalfrisur</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 – 150 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Fauxlocs inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">160 – 200 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Boxerbraids für Kinder (bis 12 J.) inkl. Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
+<div id="pricelist-braids" class="pricelist-content">
+    <div class="space-y-4">
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids für Männer</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">25 – 150 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids / Rastazöpfe / Knotless / Boho-Braids</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">70 – 250 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Cornrows / Boxerbraids / Festivalfrisur</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 – 150 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Fauxlocs inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">160 – 200 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Boxerbraids für Kinder (bis 12 J.) inkl. Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
+    </div>
+    <p class="text-on-surface-variant text-xs mt-6 italic">Der Preis hängt von der benötigten Zeit und der Art der Frisur ab.</p>
 </div>
-<p class="text-on-surface-variant text-xs mt-6 italic">Der Preis hängt von der benötigten Zeit und der Art der Frisur ab.</p>
 </div>
 </div>
 
@@ -305,15 +309,17 @@
     <h3 class="font-headline text-2xl text-on-surface">Haarverlängerung — Preisliste</h3>
     <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
 </div>
-<div class="space-y-4">
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 40 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">250 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 55 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">285 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 70 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">310 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ponytail inkl. Einarbeitung mit Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">50 – 80 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Tressen hochsetzen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">17 € / Reihe</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Haarverdichtung 50 Gramm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">150 €</span></div>
+<div id="pricelist-verlaengerung" class="pricelist-content">
+    <div class="space-y-4">
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 40 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">250 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 55 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">285 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 70 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">310 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ponytail inkl. Einarbeitung mit Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">50 – 80 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Tressen hochsetzen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">17 € / Reihe</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Haarverdichtung 50 Gramm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">150 €</span></div>
+    </div>
+    <p class="text-on-surface-variant text-xs mt-6 italic">Wir empfehlen eine persönliche Beratung für Neukunden.</p>
 </div>
-<p class="text-on-surface-variant text-xs mt-6 italic">Wir empfehlen eine persönliche Beratung für Neukunden.</p>
 </div>
 </div>
 
@@ -323,20 +329,15 @@
     <h3 class="font-headline text-2xl text-on-surface">Braiding Academy — Kurse &amp; Workshops</h3>
     <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. Material</span>
 </div>
-<div class="space-y-4">
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braiding Basics — Einsteigerworkshop (1 Tag)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">149 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Cornrows &amp; Boxerbraids Intensiv (2 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">249 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Extensions &amp; Verlängerung Praxiskurs (2 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">299 €</span></div>
-    <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Profi Braiding Masterclass (5 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">599 €</span></div>
+<div id="pricelist-kurse" class="pricelist-content">
+    <div class="space-y-4">
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braiding Basics — Einsteigerworkshop (1 Tag)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">149 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Cornrows &amp; Boxerbraids Intensiv (2 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">249 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Extensions &amp; Verlängerung Praxiskurs (2 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">299 €</span></div>
+        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Profi Braiding Masterclass (5 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">599 €</span></div>
+    </div>
+    <p class="text-on-surface-variant text-xs mt-6 italic">Kleine Gruppen (max. 6 Teilnehmer). Übungsmaterial &amp; Zertifikat inklusive.</p>
 </div>
-<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-8">Nächste Termine</h4>
-<div class="space-y-3 text-sm text-on-surface-variant">
-    <div class="flex justify-between"><span>Braiding Basics</span><span class="font-medium text-on-surface">Sa, 19. April 2025 · 10–17 Uhr</span></div>
-    <div class="flex justify-between"><span>Cornrows Intensiv</span><span class="font-medium text-on-surface">Sa–So, 3.–4. Mai 2025</span></div>
-    <div class="flex justify-between"><span>Extensions Praxiskurs</span><span class="font-medium text-on-surface">Sa–So, 17.–18. Mai 2025</span></div>
-    <div class="flex justify-between"><span>Masterclass</span><span class="font-medium text-on-surface">Mo–Fr, 2.–6. Juni 2025</span></div>
-</div>
-<p class="text-on-surface-variant text-xs mt-6 italic">Kleine Gruppen (max. 6 Teilnehmer). Übungsmaterial &amp; Zertifikat inklusive. Anmeldung über Termin buchen.</p>
 </div>
 </div>
 </div>
@@ -700,6 +701,112 @@
                 }
             });
         });
+    </script>
+
+    <!-- Google Sheets Preisliste Loader -->
+    <script>
+        // ===== GOOGLE SHEETS KONFIGURATION =====
+        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR69OsmAKRcPqgmHjt0jfTe1fK9RLoRKn5iQb_T9BqdTD1IisOqgPuoX4Ogam45cJn-_W3EkxBHgE97/pub?output=csv';
+        // ========================================
+
+        // Kategorie-Name → HTML-Container-ID Mapping
+        const CATEGORY_MAP = {
+            'Schnitt Styling & Farbe': 'pricelist-schnitt',
+            'Braids & Zöpfe': 'pricelist-braids',
+            'Haarverlängerung': 'pricelist-verlaengerung',
+            'Braiding Academy': 'pricelist-kurse'
+        };
+
+        function parseCSV(text) {
+            const lines = text.split('\n').filter(line => line.trim());
+            const rows = [];
+            for (let i = 1; i < lines.length; i++) { // Skip header
+                const row = [];
+                let current = '';
+                let inQuotes = false;
+                for (let c = 0; c < lines[i].length; c++) {
+                    if (lines[i][c] === '"') {
+                        inQuotes = !inQuotes;
+                    } else if (lines[i][c] === ',' && !inQuotes) {
+                        row.push(current.trim());
+                        current = '';
+                    } else {
+                        current += lines[i][c];
+                    }
+                }
+                row.push(current.trim());
+                if (row.length >= 4) rows.push({ kategorie: row[0], unterkategorie: row[1], leistung: row[2], preis: row[3] });
+            }
+            return rows;
+        }
+
+        function renderPriceRow(leistung, preis) {
+            return `<div class="flex justify-between items-baseline gap-4">
+                <span class="text-on-surface font-medium">${leistung}</span>
+                <span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span>
+                <span class="text-primary font-bold whitespace-nowrap">${preis}</span>
+            </div>`;
+        }
+
+        function renderCategory(items) {
+            // Gruppiere nach Unterkategorie
+            const groups = {};
+            items.forEach(item => {
+                const sub = item.unterkategorie || '_default';
+                if (!groups[sub]) groups[sub] = [];
+                groups[sub].push(item);
+            });
+
+            let html = '';
+            const subKeys = Object.keys(groups);
+
+            subKeys.forEach((sub, index) => {
+                if (sub !== '_default') {
+                    html += `<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 ${index === 0 ? 'mt-2' : 'mt-8'}">${sub}</h4>`;
+                }
+                html += '<div class="space-y-4">';
+                groups[sub].forEach(item => {
+                    html += renderPriceRow(item.leistung, item.preis);
+                });
+                html += '</div>';
+            });
+
+            return html;
+        }
+
+        async function loadPricesFromSheet() {
+            try {
+                const response = await fetch(SHEET_CSV_URL);
+                if (!response.ok) throw new Error('Sheet nicht erreichbar');
+                const csvText = await response.text();
+                const rows = parseCSV(csvText);
+
+                // Gruppiere nach Kategorie
+                const categories = {};
+                rows.forEach(row => {
+                    if (!categories[row.kategorie]) categories[row.kategorie] = [];
+                    categories[row.kategorie].push(row);
+                });
+
+                // Rendere jede Kategorie
+                Object.entries(CATEGORY_MAP).forEach(([katName, containerId]) => {
+                    const container = document.getElementById(containerId);
+                    if (container && categories[katName]) {
+                        container.innerHTML = renderCategory(categories[katName]);
+                    } else if (container && !categories[katName]) {
+                        container.innerHTML = '<p class="text-on-surface-variant text-sm italic">Keine Leistungen in dieser Kategorie.</p>';
+                    }
+                });
+
+                console.log('✅ Preisliste aus Google Sheets geladen');
+            } catch (error) {
+                console.warn('⚠️ Google Sheets nicht erreichbar, zeige Fallback:', error);
+                // Fallback-Preise bleiben stehen
+            }
+        }
+
+        // Preise laden wenn Seite bereit
+        document.addEventListener('DOMContentLoaded', loadPricesFromSheet);
     </script>
 
     <!-- Service Akkordeon Logic -->
