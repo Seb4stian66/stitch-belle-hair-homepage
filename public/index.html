@@ -186,9 +186,9 @@
 <span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Über Uns</span>
 <h2 class="font-headline text-4xl md:text-6xl text-on-surface mb-8 leading-tight">Handwerk trifft Leidenschaft.</h2>
 <div class="space-y-6 text-on-surface-variant text-lg leading-relaxed max-w-xl">
-<p>Bei Belle Hair verstehen wir unser Handwerk als Kunstform. In unserem Atelier im Herzen der Stadt schaffen wir eine Atmosphäre von Ruhe und exklusiver Betreuung.</p>
-<p>Jede Beratung ist so individuell wie Ihr Haar selbst. Wir nehmen uns die Zeit, Ihre Wünsche zu verstehen und mit modernsten Techniken sowie hochwertigsten Produkten in Perfektion umzusetzen.</p>
-<p class="font-headline italic text-primary">"Qualität ist kein Zufall, sondern das Ergebnis höchster Präzision."</p>
+<p>Bei Belle Hair verstehen wir unser Handwerk als Kunstform. In unserem Atelier im Herzen von Dortmund schaffen wir eine Atmosphäre von Ruhe und exklusiver Betreuung — denn guter Style beginnt mit einem guten Gespräch.</p>
+<p>Jede Beratung ist so individuell wie Ihr Haar selbst. Statt Standardlösungen nehmen wir uns die Zeit, Ihren Typ, Ihre Wünsche und Ihren Alltag zu verstehen — und daraus mit modernsten Techniken und hochwertigen Produkten genau den Look zu kreieren, der wirklich zu Ihnen passt.</p>
+<p class="font-headline italic text-primary">"Typgerecht statt Standard — das ist unser Versprechen."</p>
 </div>
 </div>
 </div>
@@ -205,141 +205,12 @@
                         Ein umfassendes Portfolio für zeitlose Ästhetik und moderne Trends.
                     </p>
 </div>
+<!-- Dynamische Karten & Preislisten — alles aus Google Sheets generiert -->
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="services-grid">
-<!-- 1. Haarverlängerung -->
-<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="verlaengerung" onclick="toggleService('verlaengerung')">
-<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="face_3">face_3</span>
-<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Haarverlängerung</h3>
-<ul class="text-on-surface-variant space-y-3 text-sm">
-<li>Extensions &amp; Haarverdichtung</li>
-<li>Ponytails &amp; Tressen</li>
-<li>Wigs &amp; Perücken</li>
-</ul>
-<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
+    <div class="col-span-full text-center py-12 text-on-surface-variant animate-pulse">Leistungen werden geladen...</div>
 </div>
-<!-- 2. Braids & Zöpfe -->
-<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="braids" onclick="toggleService('braids')">
-<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="gesture">gesture</span>
-<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Braids &amp; Zöpfe</h3>
-<ul class="text-on-surface-variant space-y-3 text-sm">
-<li>Braids &amp; Rastazöpfe</li>
-<li>Cornrows &amp; Boxerbraids</li>
-<li>Fauxlocs &amp; Dreadlocks</li>
-</ul>
-<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
-</div>
-<!-- 3. Schnitt, Styling & Farbe -->
-<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="schnitt" onclick="toggleService('schnitt')">
-<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="content_cut">content_cut</span>
-<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Schnitt, Styling &amp; Farbe</h3>
-<ul class="text-on-surface-variant space-y-3 text-sm">
-<li>Damen &amp; Herren Haarschnitt</li>
-<li>Farbe, Strähnen &amp; Dauerwelle</li>
-<li>Augenbrauen &amp; Wimpern</li>
-</ul>
-<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
-</div>
-<!-- 4. Braiding Academy -->
-<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="kurse" onclick="toggleService('kurse')">
-<span class="material-symbols-outlined text-primary text-4xl mb-8" data-icon="school">school</span>
-<h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">Braiding Academy</h3>
-<ul class="text-on-surface-variant space-y-3 text-sm">
-<li>Workshops für Anfänger</li>
-<li>Profi-Kurse &amp; Masterclasses</li>
-<li>Zertifizierte Ausbildung</li>
-</ul>
-<span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
-</div>
-</div>
-
-<!-- Akkordeon Preislisten — werden dynamisch aus Google Sheets geladen -->
-<div id="price-schnitt" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
-<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
-<div class="flex items-center justify-between mb-8">
-    <h3 class="font-headline text-2xl text-on-surface">Schnitt, Styling &amp; Farbe — Preisliste</h3>
-    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
-</div>
-<div id="pricelist-schnitt" class="pricelist-content">
-    <h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-2">Schnitt &amp; Styling</h4>
-    <div class="space-y-4">
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Damen — Waschen, Schneiden, Föhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 20 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Herren Haarschnitt</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Mädchen)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">12 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Kinder Haarschnitt (Jungs)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
-    </div>
-    <h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-8">Farbe &amp; Technik</h4>
-    <div class="space-y-4">
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Bei Frisuren mit Haarverlängerung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 30 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ansatz Farbe</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 35 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Foliensträhnen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 55 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Dauerwelle</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">ab 59 €</span></div>
-    </div>
-    <h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 mt-8">Beauty</h4>
-    <div class="space-y-4">
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen zupfen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Augenbrauen färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">8 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Wimpern färben</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 €</span></div>
-    </div>
-</div>
-</div>
-</div>
-
-<div id="price-braids" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
-<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
-<div class="flex items-center justify-between mb-8">
-    <h3 class="font-headline text-2xl text-on-surface">Braids &amp; Zöpfe — Preisliste</h3>
-    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
-</div>
-<div id="pricelist-braids" class="pricelist-content">
-    <div class="space-y-4">
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids für Männer</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">25 – 150 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braids / Rastazöpfe / Knotless / Boho-Braids</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">70 – 250 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Cornrows / Boxerbraids / Festivalfrisur</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">10 – 150 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Fauxlocs inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">160 – 200 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Boxerbraids für Kinder (bis 12 J.) inkl. Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">15 €</span></div>
-    </div>
-    <p class="text-on-surface-variant text-xs mt-6 italic">Der Preis hängt von der benötigten Zeit und der Art der Frisur ab.</p>
-</div>
-</div>
-</div>
-
-<div id="price-verlaengerung" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
-<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
-<div class="flex items-center justify-between mb-8">
-    <h3 class="font-headline text-2xl text-on-surface">Haarverlängerung — Preisliste</h3>
-    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
-</div>
-<div id="pricelist-verlaengerung" class="pricelist-content">
-    <div class="space-y-4">
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 40 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">250 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 55 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">285 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">100 Gramm · 70 cm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">310 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Ponytail inkl. Einarbeitung mit Kunsthaar</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">50 – 80 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Tressen hochsetzen</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">17 € / Reihe</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Haarverdichtung 50 Gramm inkl. Einarbeitung</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">150 €</span></div>
-    </div>
-    <p class="text-on-surface-variant text-xs mt-6 italic">Wir empfehlen eine persönliche Beratung für Neukunden.</p>
-</div>
-</div>
-</div>
-
-<div id="price-kurse" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
-<div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
-<div class="flex items-center justify-between mb-8">
-    <h3 class="font-headline text-2xl text-on-surface">Braiding Academy — Kurse &amp; Workshops</h3>
-    <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. Material</span>
-</div>
-<div id="pricelist-kurse" class="pricelist-content">
-    <div class="space-y-4">
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Braiding Basics — Einsteigerworkshop (1 Tag)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">149 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Cornrows &amp; Boxerbraids Intensiv (2 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">249 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Extensions &amp; Verlängerung Praxiskurs (2 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">299 €</span></div>
-        <div class="flex justify-between items-baseline gap-4"><span class="text-on-surface font-medium">Profi Braiding Masterclass (5 Tage)</span><span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span><span class="text-primary font-bold whitespace-nowrap">599 €</span></div>
-    </div>
-    <p class="text-on-surface-variant text-xs mt-6 italic">Kleine Gruppen (max. 6 Teilnehmer). Übungsmaterial &amp; Zertifikat inklusive.</p>
-</div>
-</div>
-</div>
+<!-- Akkordeon Container -->
+<div id="services-pricelists"></div>
 </div>
 </section>
 <!-- Portfolio Gallery -->
@@ -703,39 +574,50 @@
         });
     </script>
 
-    <!-- Google Sheets Preisliste Loader -->
+    <!-- Komplett dynamisches Leistungen-System aus Google Sheets -->
     <script>
-        // ===== GOOGLE SHEETS KONFIGURATION =====
+        // ===== GOOGLE SHEETS URL =====
         const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR69OsmAKRcPqgmHjt0jfTe1fK9RLoRKn5iQb_T9BqdTD1IisOqgPuoX4Ogam45cJn-_W3EkxBHgE97/pub?output=csv';
-        // ========================================
 
-        // Kategorie-Name → HTML-Container-ID Mapping
-        const CATEGORY_MAP = {
-            'Schnitt Styling & Farbe': 'pricelist-schnitt',
-            'Braids & Zöpfe': 'pricelist-braids',
-            'Haarverlängerung': 'pricelist-verlaengerung',
-            'Braiding Academy': 'pricelist-kurse'
-        };
+        // Icons werden automatisch anhand von Schlüsselwörtern zugewiesen
+        const ICON_KEYWORDS = [
+            { keywords: ['schnitt', 'cut', 'styling', 'farbe', 'color'], icon: 'content_cut' },
+            { keywords: ['braid', 'zöpf', 'cornrow', 'loc', 'rasta'], icon: 'gesture' },
+            { keywords: ['verlängerung', 'extension', 'tressen', 'wig', 'perück'], icon: 'face_3' },
+            { keywords: ['academy', 'kurs', 'workshop', 'ausbildung', 'schul'], icon: 'school' },
+            { keywords: ['beauty', 'makeup', 'nagel', 'nail', 'pflege'], icon: 'spa' },
+            { keywords: ['bart', 'barber', 'herren', 'men'], icon: 'face_6' },
+        ];
+        const FALLBACK_ICONS = ['auto_awesome', 'star', 'diamond', 'favorite', 'local_florist', 'flare'];
+
+        function getIconForCategory(name) {
+            const lower = name.toLowerCase();
+            for (const entry of ICON_KEYWORDS) {
+                if (entry.keywords.some(kw => lower.includes(kw))) return entry.icon;
+            }
+            // Fallback: rotiere durch hübsche Icons
+            const idx = Math.abs(name.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % FALLBACK_ICONS.length;
+            return FALLBACK_ICONS[idx];
+        }
+
+        function makeSlug(text) {
+            return text.toLowerCase().replace(/[^a-z0-9äöüß]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+        }
 
         function parseCSV(text) {
             const lines = text.split('\n').filter(line => line.trim());
             const rows = [];
-            for (let i = 1; i < lines.length; i++) { // Skip header
+            for (let i = 1; i < lines.length; i++) {
                 const row = [];
                 let current = '';
                 let inQuotes = false;
                 for (let c = 0; c < lines[i].length; c++) {
-                    if (lines[i][c] === '"') {
-                        inQuotes = !inQuotes;
-                    } else if (lines[i][c] === ',' && !inQuotes) {
-                        row.push(current.trim());
-                        current = '';
-                    } else {
-                        current += lines[i][c];
-                    }
+                    if (lines[i][c] === '"') { inQuotes = !inQuotes; }
+                    else if (lines[i][c] === ',' && !inQuotes) { row.push(current.trim()); current = ''; }
+                    else { current += lines[i][c]; }
                 }
                 row.push(current.trim());
-                if (row.length >= 4) rows.push({ kategorie: row[0], unterkategorie: row[1], leistung: row[2], preis: row[3] });
+                if (row.length >= 4 && row[0]) rows.push({ kategorie: row[0], unterkategorie: row[1] || '', leistung: row[2], preis: row[3] });
             }
             return rows;
         }
@@ -748,98 +630,127 @@
             </div>`;
         }
 
-        function renderCategory(items) {
-            // Gruppiere nach Unterkategorie
+        function renderPriceList(items) {
             const groups = {};
             items.forEach(item => {
                 const sub = item.unterkategorie || '_default';
                 if (!groups[sub]) groups[sub] = [];
                 groups[sub].push(item);
             });
-
             let html = '';
-            const subKeys = Object.keys(groups);
-
-            subKeys.forEach((sub, index) => {
+            Object.keys(groups).forEach((sub, index) => {
                 if (sub !== '_default') {
                     html += `<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 ${index === 0 ? 'mt-2' : 'mt-8'}">${sub}</h4>`;
                 }
                 html += '<div class="space-y-4">';
-                groups[sub].forEach(item => {
-                    html += renderPriceRow(item.leistung, item.preis);
-                });
+                groups[sub].forEach(item => { html += renderPriceRow(item.leistung, item.preis); });
                 html += '</div>';
             });
-
             return html;
         }
 
-        async function loadPricesFromSheet() {
+        function renderServiceCard(katName, slug, items) {
+            const icon = getIconForCategory(katName);
+            // Zeige bis zu 3 Leistungsnamen als Vorschau-Bullet-Points
+            const uniqueItems = [...new Set(items.map(i => i.leistung))];
+            const previews = uniqueItems.slice(0, 3).map(name => {
+                // Kürze lange Namen
+                const short = name.length > 35 ? name.substring(0, 32) + '…' : name;
+                return `<li>${short}</li>`;
+            }).join('\n');
+
+            return `<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="${slug}" onclick="toggleService('${slug}')">
+                <span class="material-symbols-outlined text-primary text-4xl mb-8">${icon}</span>
+                <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">${katName}</h3>
+                <ul class="text-on-surface-variant space-y-3 text-sm">${previews}</ul>
+                <span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
+            </div>`;
+        }
+
+        function renderPriceAccordion(katName, slug, items) {
+            return `<div id="price-${slug}" class="service-pricelist overflow-hidden transition-all duration-500 ease-in-out" style="max-height: 0; opacity: 0;">
+                <div class="bg-surface-container-lowest rounded-xl ghost-border mt-6 p-8 md:p-12">
+                    <div class="flex items-center justify-between mb-8">
+                        <h3 class="font-headline text-2xl text-on-surface">${katName} — Preisliste</h3>
+                        <span class="text-primary text-[10px] uppercase tracking-widest font-bold">Preise inkl. MwSt.</span>
+                    </div>
+                    ${renderPriceList(items)}
+                </div>
+            </div>`;
+        }
+
+        async function loadServicesFromSheet() {
             try {
                 const response = await fetch(SHEET_CSV_URL);
                 if (!response.ok) throw new Error('Sheet nicht erreichbar');
                 const csvText = await response.text();
                 const rows = parseCSV(csvText);
 
-                // Gruppiere nach Kategorie
+                // Gruppiere nach Kategorie (Reihenfolge beibehalten!)
+                const categoryOrder = [];
                 const categories = {};
                 rows.forEach(row => {
-                    if (!categories[row.kategorie]) categories[row.kategorie] = [];
+                    if (!categories[row.kategorie]) {
+                        categories[row.kategorie] = [];
+                        categoryOrder.push(row.kategorie);
+                    }
                     categories[row.kategorie].push(row);
                 });
 
-                // Rendere jede Kategorie
-                Object.entries(CATEGORY_MAP).forEach(([katName, containerId]) => {
-                    const container = document.getElementById(containerId);
-                    if (container && categories[katName]) {
-                        container.innerHTML = renderCategory(categories[katName]);
-                    } else if (container && !categories[katName]) {
-                        container.innerHTML = '<p class="text-on-surface-variant text-sm italic">Keine Leistungen in dieser Kategorie.</p>';
-                    }
+                const grid = document.getElementById('services-grid');
+                const priceContainer = document.getElementById('services-pricelists');
+
+                // Grid-Spalten dynamisch anpassen (max 4 pro Reihe)
+                const colCount = Math.min(categoryOrder.length, 4);
+                grid.className = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${colCount} gap-4`;
+
+                // Generiere Karten und Preislisten
+                let cardsHTML = '';
+                let pricelistsHTML = '';
+                categoryOrder.forEach(katName => {
+                    const slug = makeSlug(katName);
+                    const items = categories[katName];
+                    cardsHTML += renderServiceCard(katName, slug, items);
+                    pricelistsHTML += renderPriceAccordion(katName, slug, items);
                 });
 
-                console.log('✅ Preisliste aus Google Sheets geladen');
+                grid.innerHTML = cardsHTML;
+                priceContainer.innerHTML = pricelistsHTML;
+
+                console.log(`✅ ${categoryOrder.length} Kategorien dynamisch aus Google Sheets geladen:`, categoryOrder);
             } catch (error) {
-                console.warn('⚠️ Google Sheets nicht erreichbar, zeige Fallback:', error);
-                // Fallback-Preise bleiben stehen
+                console.warn('⚠️ Google Sheets nicht erreichbar:', error);
+                document.getElementById('services-grid').innerHTML = '<div class="col-span-full text-center py-12 text-on-surface-variant">Preisliste konnte nicht geladen werden. Bitte versuche es später erneut.</div>';
             }
         }
 
-        // Preise laden wenn Seite bereit
-        document.addEventListener('DOMContentLoaded', loadPricesFromSheet);
-    </script>
-
-    <!-- Service Akkordeon Logic -->
-    <script>
+        // Akkordeon Toggle (funktioniert dynamisch für beliebige IDs)
         function toggleService(serviceId) {
             const allPriceLists = document.querySelectorAll('.service-pricelist');
             const allCards = document.querySelectorAll('.service-card');
             const targetList = document.getElementById('price-' + serviceId);
             const targetCard = document.querySelector('[data-service="' + serviceId + '"]');
+            if (!targetList || !targetCard) return;
             const isOpen = targetList.style.maxHeight !== '0px' && targetList.style.maxHeight !== '';
 
-            // Close all
-            allPriceLists.forEach(list => {
-                list.style.maxHeight = '0px';
-                list.style.opacity = '0';
-            });
+            allPriceLists.forEach(list => { list.style.maxHeight = '0px'; list.style.opacity = '0'; });
             allCards.forEach(card => {
                 card.classList.remove('ring-2', 'ring-primary', 'shadow-xl', 'scale-[1.02]');
-                card.querySelector('.service-chevron').style.transform = 'rotate(0deg)';
+                const chevron = card.querySelector('.service-chevron');
+                if (chevron) chevron.style.transform = 'rotate(0deg)';
             });
 
-            // Open clicked (if it wasn't already open)
             if (!isOpen) {
                 targetList.style.maxHeight = targetList.scrollHeight + 'px';
                 targetList.style.opacity = '1';
                 targetCard.classList.add('ring-2', 'ring-primary', 'shadow-xl', 'scale-[1.02]');
                 targetCard.querySelector('.service-chevron').style.transform = 'rotate(180deg)';
-                // Smooth scroll to the price list
-                setTimeout(() => {
-                    targetList.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-                }, 300);
+                setTimeout(() => { targetList.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 300);
             }
         }
+
+        // Laden wenn Seite bereit
+        document.addEventListener('DOMContentLoaded', loadServicesFromSheet);
     </script>
 
 </body></html>
