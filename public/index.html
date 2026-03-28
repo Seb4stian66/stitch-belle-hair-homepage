@@ -617,16 +617,26 @@
                     else { current += lines[i][c]; }
                 }
                 row.push(current.trim());
-                if (row.length >= 4 && row[0]) rows.push({ kategorie: row[0], unterkategorie: row[1] || '', leistung: row[2], preis: row[3] });
+                if (row.length >= 4 && row[0]) rows.push({ kategorie: row[0], unterkategorie: row[1] || '', leistung: row[2], preis: row[3], datum: row[4] || '' });
             }
             return rows;
         }
 
-        function renderPriceRow(leistung, preis) {
+        function renderPriceRow(leistung, preis, datum) {
+            let datumHtml = '';
+            if (datum) {
+                datumHtml = `<div class="flex items-center gap-1.5 mt-1">
+                    <span class="material-symbols-outlined text-primary/70 text-sm">calendar_month</span>
+                    <span class="text-xs text-on-surface-variant">${datum}</span>
+                </div>`;
+            }
             return `<div class="flex justify-between items-baseline gap-4">
-                <span class="text-on-surface font-medium">${leistung}</span>
-                <span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2"></span>
-                <span class="text-primary font-bold whitespace-nowrap">${preis}</span>
+                <div>
+                    <span class="text-on-surface font-medium">${leistung}</span>
+                    ${datumHtml}
+                </div>
+                <span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2 self-end mb-1"></span>
+                <span class="text-primary font-bold whitespace-nowrap self-end">${preis}</span>
             </div>`;
         }
 
@@ -643,7 +653,7 @@
                     html += `<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 ${index === 0 ? 'mt-2' : 'mt-8'}">${sub}</h4>`;
                 }
                 html += '<div class="space-y-4">';
-                groups[sub].forEach(item => { html += renderPriceRow(item.leistung, item.preis); });
+                groups[sub].forEach(item => { html += renderPriceRow(item.leistung, item.preis, item.datum); });
                 html += '</div>';
             });
             return html;
