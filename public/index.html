@@ -122,6 +122,10 @@
 <a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#shop">Shop</a>
 <a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#kontakt">Kontakt</a>
 </div>
+<button onclick="openCartModal()" class="hidden md:flex items-center justify-center relative text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-colors cursor-pointer" aria-label="Warenkorb">
+    <span class="material-symbols-outlined text-2xl">shopping_bag</span>
+    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
+</button>
 <button onclick="openBookingModal()" class="hidden md:inline-block bg-primary hover:bg-primary-fixed-dim text-on-primary px-8 py-3 rounded-md text-xs font-bold uppercase tracking-widest active:scale-95 transition-all duration-300 cursor-pointer">
                 Termin buchen
             </button>
@@ -277,64 +281,14 @@
         Professionelle Haarpflege für zu Hause — von uns ausgewählt und empfohlen.
     </p>
 </div>
-<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-    <!-- Produkt 1 -->
-    <div class="group cursor-pointer">
-        <div class="aspect-square rounded-xl overflow-hidden bg-white shadow-md ghost-border mb-4 relative">
-            <img src="https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&h=400&fit=crop" alt="Braiding Spray" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            <span class="absolute top-3 right-3 bg-primary text-on-primary text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300">Neu</span>
-        </div>
-        <h4 class="font-medium text-on-surface text-sm group-hover:text-primary transition-colors">Braiding Spray</h4>
-        <p class="text-on-surface-variant text-xs mt-0.5">Feuchtigkeitsspray für Flechtfrisuren</p>
-        <p class="text-primary font-bold text-sm mt-2">14,90 €</p>
-    </div>
-    <!-- Produkt 2 -->
-    <div class="group cursor-pointer">
-        <div class="aspect-square rounded-xl overflow-hidden bg-white shadow-md ghost-border mb-4 relative">
-            <img src="https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=400&h=400&fit=crop" alt="Arganöl Serum" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-        </div>
-        <h4 class="font-medium text-on-surface text-sm group-hover:text-primary transition-colors">Arganöl Serum</h4>
-        <p class="text-on-surface-variant text-xs mt-0.5">Intensivpflege für glänzendes Haar</p>
-        <p class="text-primary font-bold text-sm mt-2">22,50 €</p>
-    </div>
-    <!-- Produkt 3 -->
-    <div class="group cursor-pointer">
-        <div class="aspect-square rounded-xl overflow-hidden bg-white shadow-md ghost-border mb-4 relative">
-            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop" alt="Edge Control Gel" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-            <span class="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">Bestseller</span>
-        </div>
-        <h4 class="font-medium text-on-surface text-sm group-hover:text-primary transition-colors">Edge Control Gel</h4>
-        <p class="text-on-surface-variant text-xs mt-0.5">Starker Halt für Baby Hairs & Kanten</p>
-        <p class="text-primary font-bold text-sm mt-2">9,90 €</p>
-    </div>
-    <!-- Produkt 4 -->
-    <div class="group cursor-pointer">
-        <div class="aspect-square rounded-xl overflow-hidden bg-white shadow-md ghost-border mb-4 relative">
-            <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&h=400&fit=crop" alt="Silk Bonnet" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-        </div>
-        <h4 class="font-medium text-on-surface text-sm group-hover:text-primary transition-colors">Silk Bonnet</h4>
-        <p class="text-on-surface-variant text-xs mt-0.5">Seidene Schlafhaube zum Schutz</p>
-        <p class="text-primary font-bold text-sm mt-2">18,00 €</p>
-    </div>
-    <!-- Produkt 5 -->
-    <div class="group cursor-pointer">
-        <div class="aspect-square rounded-xl overflow-hidden bg-white shadow-md ghost-border mb-4 relative">
-            <img src="https://images.unsplash.com/photo-1597354984706-fac992d9306f?w=400&h=400&fit=crop" alt="Loc Butter" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-        </div>
-        <h4 class="font-medium text-on-surface text-sm group-hover:text-primary transition-colors">Loc Butter</h4>
-        <p class="text-on-surface-variant text-xs mt-0.5">Nährende Butter für Dreads & Locs</p>
-        <p class="text-primary font-bold text-sm mt-2">16,90 €</p>
-    </div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6" id="shop-grid">
+    <!-- Produkte werden via JS generiert -->
 </div>
 <div class="text-center mt-14">
-    <a href="#" class="inline-block bg-primary hover:bg-primary-fixed-dim text-on-primary px-10 py-4 rounded-md text-xs font-bold uppercase tracking-widest active:scale-95 transition-all">
-        Alle Produkte ansehen
-    </a>
+    <button onclick="openCartModal()" class="inline-flex items-center gap-3 bg-primary hover:bg-primary-fixed-dim text-on-primary px-10 py-4 rounded-md text-xs font-bold uppercase tracking-widest active:scale-95 transition-all cursor-pointer">
+        <span class="material-symbols-outlined text-lg">shopping_bag</span>
+        Warenkorb ansehen (<span id="cart-count-btn">0</span>)
+    </button>
 </div>
 </div>
 </section>
@@ -472,6 +426,44 @@
         </div>
     </div>
 </div>
+
+<!-- Warenkorb Modal -->
+<div id="cart-modal" class="fixed inset-0 z-[100] hidden items-center justify-center">
+    <div class="absolute inset-0 bg-stone-900/70 backdrop-blur-sm" onclick="closeCartModal()"></div>
+    <div class="relative bg-white dark:bg-stone-900 rounded-2xl shadow-2xl max-w-lg w-full mx-4 max-h-[85vh] flex flex-col transform scale-95 opacity-0 transition-all duration-300" id="cart-modal-content">
+        <!-- Header -->
+        <div class="px-8 pt-8 pb-4 border-b border-stone-200 dark:border-stone-700 flex items-center justify-between flex-shrink-0">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-2xl">shopping_bag</span>
+                <h3 class="text-lg font-bold text-stone-900 dark:text-white">Warenkorb</h3>
+            </div>
+            <button onclick="closeCartModal()" class="text-stone-400 hover:text-stone-700 dark:hover:text-white transition-colors cursor-pointer">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        <!-- Cart Items (scrollbar) -->
+        <div class="flex-1 overflow-y-auto p-8" id="cart-items">
+            <p class="text-stone-400 text-center py-8">Dein Warenkorb ist leer</p>
+        </div>
+        <!-- Footer mit Summe & Checkout -->
+        <div class="px-8 pb-8 pt-4 border-t border-stone-200 dark:border-stone-700 flex-shrink-0" id="cart-footer" style="display:none;">
+            <div class="flex justify-between items-center mb-6">
+                <span class="font-bold text-stone-900 dark:text-white text-lg">Gesamt</span>
+                <span class="font-bold text-primary text-xl" id="cart-total">0,00 €</span>
+            </div>
+            <div class="space-y-3">
+                <button onclick="checkoutWhatsApp()" class="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest active:scale-95 transition-all cursor-pointer">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Bestellung via WhatsApp
+                </button>
+                <button onclick="checkoutPayPal()" class="w-full flex items-center justify-center gap-3 bg-[#0070BA] hover:bg-[#005EA6] text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest active:scale-95 transition-all cursor-pointer">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 01.92-.789h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.774-4.47z"/></svg>
+                    Mit PayPal bezahlen
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 </main>
 <!-- Footer -->
 <footer class="bg-stone-100 dark:bg-stone-950 border-t border-stone-200/20">
@@ -552,10 +544,163 @@
                 document.body.style.overflow = '';
             }, 300);
         }
-        // ESC-Taste schließt Modal
+        // ESC-Taste schließt Modals
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeBookingModal();
+            if (e.key === 'Escape') { closeBookingModal(); closeCartModal(); }
         });
+
+        // ===== SHOP & WARENKORB SYSTEM =====
+        const SHOP_PRODUCTS = [
+            { id: 1, name: "Braiding Spray", desc: "Feuchtigkeitsspray für Flechtfrisuren", price: 14.90, img: "https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&h=400&fit=crop", badge: "Neu" },
+            { id: 2, name: "Arganöl Serum", desc: "Intensivpflege für glänzendes Haar", price: 22.50, img: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=400&h=400&fit=crop" },
+            { id: 3, name: "Edge Control Gel", desc: "Starker Halt für Baby Hairs & Kanten", price: 9.90, img: "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&h=400&fit=crop", badge: "Bestseller", badgeColor: "bg-red-600" },
+            { id: 4, name: "Silk Bonnet", desc: "Seidene Schlafhaube zum Schutz", price: 18.00, img: "https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=400&h=400&fit=crop" },
+            { id: 5, name: "Loc Butter", desc: "Nährende Butter für Dreads & Locs", price: 16.90, img: "https://images.unsplash.com/photo-1597354984706-fac992d9306f?w=400&h=400&fit=crop" }
+        ];
+
+        let cart = [];
+
+        function formatPrice(p) { return p.toFixed(2).replace('.', ',') + ' €'; }
+
+        function renderShopGrid() {
+            const grid = document.getElementById('shop-grid');
+            if (!grid) return;
+            grid.innerHTML = SHOP_PRODUCTS.map(p => {
+                const badgeHTML = p.badge ? `<span class="absolute top-3 right-3 ${p.badgeColor || 'bg-primary'} text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full">${p.badge}</span>` : '';
+                return `<div class="group">
+                    <div class="aspect-square rounded-xl overflow-hidden bg-white shadow-md ghost-border mb-4 relative">
+                        <img src="${p.img}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+                        ${badgeHTML}
+                    </div>
+                    <h4 class="font-medium text-on-surface text-sm group-hover:text-primary transition-colors">${p.name}</h4>
+                    <p class="text-on-surface-variant text-xs mt-0.5">${p.desc}</p>
+                    <div class="flex items-center justify-between mt-3 gap-2">
+                        <span class="text-primary font-bold text-sm">${formatPrice(p.price)}</span>
+                        <button onclick="addToCart(${p.id})" class="flex items-center gap-1.5 bg-primary/10 hover:bg-primary text-primary hover:text-white text-xs font-bold px-3 py-2 rounded-lg transition-all active:scale-95 cursor-pointer">
+                            <span class="material-symbols-outlined text-sm">add_shopping_cart</span>
+                        </button>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function addToCart(productId) {
+            const product = SHOP_PRODUCTS.find(p => p.id === productId);
+            if (!product) return;
+            const existing = cart.find(item => item.id === productId);
+            if (existing) { existing.qty++; }
+            else { cart.push({ ...product, qty: 1 }); }
+            updateCartUI();
+            // Kurze Bestätigung
+            const badge = document.getElementById('cart-badge');
+            if (badge) { badge.classList.add('scale-125'); setTimeout(() => badge.classList.remove('scale-125'), 200); }
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            updateCartUI();
+            renderCartItems();
+        }
+
+        function changeQty(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (!item) return;
+            item.qty += delta;
+            if (item.qty <= 0) { removeFromCart(productId); return; }
+            updateCartUI();
+            renderCartItems();
+        }
+
+        function getCartTotal() { return cart.reduce((sum, item) => sum + item.price * item.qty, 0); }
+        function getCartCount() { return cart.reduce((sum, item) => sum + item.qty, 0); }
+
+        function updateCartUI() {
+            const count = getCartCount();
+            const badge = document.getElementById('cart-badge');
+            const btnCount = document.getElementById('cart-count-btn');
+            if (badge) {
+                badge.textContent = count;
+                if (count > 0) { badge.classList.remove('hidden'); } else { badge.classList.add('hidden'); }
+            }
+            if (btnCount) btnCount.textContent = count;
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cart-items');
+            const footer = document.getElementById('cart-footer');
+            const totalEl = document.getElementById('cart-total');
+            if (!container) return;
+
+            if (cart.length === 0) {
+                container.innerHTML = '<p class="text-stone-400 text-center py-8">Dein Warenkorb ist leer</p>';
+                if (footer) footer.style.display = 'none';
+                return;
+            }
+
+            container.innerHTML = cart.map(item => `
+                <div class="flex items-center gap-4 py-4 border-b border-stone-100 dark:border-stone-800 last:border-0">
+                    <img src="${item.img}" alt="${item.name}" class="w-16 h-16 rounded-lg object-cover flex-shrink-0" />
+                    <div class="flex-1 min-w-0">
+                        <h4 class="font-medium text-stone-900 dark:text-white text-sm truncate">${item.name}</h4>
+                        <p class="text-primary font-bold text-sm">${formatPrice(item.price)}</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="changeQty(${item.id}, -1)" class="w-8 h-8 rounded-full border border-stone-200 dark:border-stone-600 flex items-center justify-center text-stone-500 hover:text-stone-800 hover:border-stone-400 transition-colors cursor-pointer">
+                            <span class="material-symbols-outlined text-sm">remove</span>
+                        </button>
+                        <span class="text-sm font-bold text-stone-900 dark:text-white w-6 text-center">${item.qty}</span>
+                        <button onclick="changeQty(${item.id}, 1)" class="w-8 h-8 rounded-full border border-stone-200 dark:border-stone-600 flex items-center justify-center text-stone-500 hover:text-stone-800 hover:border-stone-400 transition-colors cursor-pointer">
+                            <span class="material-symbols-outlined text-sm">add</span>
+                        </button>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})" class="text-stone-300 hover:text-red-500 transition-colors cursor-pointer">
+                        <span class="material-symbols-outlined text-lg">delete</span>
+                    </button>
+                </div>
+            `).join('');
+
+            if (footer) footer.style.display = 'block';
+            if (totalEl) totalEl.textContent = formatPrice(getCartTotal());
+        }
+
+        function openCartModal() {
+            renderCartItems();
+            const modal = document.getElementById('cart-modal');
+            const content = document.getElementById('cart-modal-content');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden';
+            requestAnimationFrame(() => {
+                content.style.opacity = '1';
+                content.style.transform = 'scale(1)';
+            });
+        }
+
+        function closeCartModal() {
+            const modal = document.getElementById('cart-modal');
+            const content = document.getElementById('cart-modal-content');
+            if (!modal || modal.classList.contains('hidden')) return;
+            content.style.opacity = '0';
+            content.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function checkoutWhatsApp() {
+            const items = cart.map(i => `${i.qty}x ${i.name} (${formatPrice(i.price)})`).join('\n');
+            const total = formatPrice(getCartTotal());
+            const msg = encodeURIComponent(`Hallo, ich möchte gerne folgende Produkte bestellen:\n\n${items}\n\nGesamt: ${total}\n\nVielen Dank!`);
+            window.open('https://wa.me/491738805188?text=' + msg, '_blank');
+        }
+
+        function checkoutPayPal() {
+            const total = getCartTotal().toFixed(2);
+            window.open('https://paypal.me/BelleHairFati/' + total, '_blank');
+        }
 
         // Copyright Jahr
         const yearEl = document.getElementById('copyright-year');
@@ -710,6 +855,9 @@
         document.addEventListener("DOMContentLoaded", () => {
             // Google Reviews rendern (statisch, kein API-Call)
             renderReviews();
+
+            // Shop-Produkte rendern
+            renderShopGrid();
 
              // ScrollSpy for Desktop Navigation Highlight
              const sections = document.querySelectorAll("section[id], footer[id]");
