@@ -25,7 +25,7 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<!-- Elfsight wird verzögert geladen um Fokus-Stealing zu verhindern -->
+<!-- Swiper CSS für Reviews Karussell -->
     <script id="tailwind-config">
         tailwind.config = {
           darkMode: "class",
@@ -253,13 +253,12 @@
 
 </div>
 </section>
-<!-- Reviews -->
-<section class="py-10 bg-surface-container-lowest overflow-hidden" data-aos="fade-up" data-aos-duration="1000" id="bewertungen">
-<div class="max-w-screen-2xl mx-auto px-4 md:px-8 text-center">
-    <span class="text-primary text-[10px] uppercase tracking-widest font-bold mb-4 block">Kundenstimmen</span>
-    <h2 class="font-headline text-4xl md:text-5xl text-on-surface mb-8">Erfahrungen</h2>
-
-    <div class="elfsight-app-0dbcf3e6-9f5c-420b-857d-ed85a7319195 w-full" data-elfsight-app-lazy></div>
+<!-- Reviews (Custom Google Widget) -->
+<section class="py-32 bg-surface-container-lowest overflow-hidden" data-aos="fade-up" data-aos-duration="1000" id="bewertungen">
+<div class="max-w-6xl mx-auto px-8">
+    <div id="reviews-container" class="relative">
+        <p class="text-primary italic animate-pulse text-center">Lade Google Bewertungen...</p>
+    </div>
 </div>
 </section>
 <!-- Kontakt & Anfahrt -->
@@ -407,14 +406,6 @@
     <script>
         AOS.init({ once: true, offset: 50 });
 
-        // Elfsight verzögert laden (verhindert Fokus-Stealing beim Seitenaufbau)
-        setTimeout(() => {
-            const s = document.createElement('script');
-            s.src = 'https://elfsightcdn.com/platform.js';
-            s.async = true;
-            document.body.appendChild(s);
-        }, 2500);
-
         // Scroll Guard stoppen & finalen Reset
         if (window._scrollGuard) clearInterval(window._scrollGuard);
         window.scrollTo(0, 0);
@@ -482,9 +473,128 @@
     <!-- Swiper JS Library -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Backend Proxy Fetch Logic -->
+    <!-- Custom Google Reviews Widget -->
+    <script>
+        const googleLogoSVG = '<svg viewBox="0 0 272 92" width="78" height="26"><path fill="#4285F4" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z"/><path fill="#EA4335" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.86 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z"/><path fill="#FBBC05" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/><path fill="#4285F4" d="M225 3v65h-9.5V3h9.5z"/><path fill="#34A853" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.2 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/><path fill="#EA4335" d="M35.29 41.19V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49-.01z"/></svg>';
+
+        function renderStars(rating, size) {
+            size = size || 20;
+            let html = '';
+            for (let i = 1; i <= 5; i++) {
+                if (rating >= i) {
+                    html += '<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="#FBBC05"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                } else if (rating >= i - 0.5) {
+                    html += '<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24"><defs><linearGradient id="half'+i+'"><stop offset="50%" stop-color="#FBBC05"/><stop offset="50%" stop-color="#E0E0E0"/></linearGradient></defs><path fill="url(#half'+i+')" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                } else {
+                    html += '<svg width="'+size+'" height="'+size+'" viewBox="0 0 24 24" fill="#E0E0E0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                }
+            }
+            return html;
+        }
+
+        async function fetchReviews() {
+            const container = document.getElementById("reviews-container");
+            if(!container) return;
+
+            try {
+                const response = await fetch("/api/reviews");
+                if(!response.ok) throw new Error("API-Fehler");
+                const data = await response.json();
+
+                if(data.reviews && data.reviews.length > 0) {
+                    const placeId = data.place_id || '';
+                    const reviewUrl = 'https://search.google.com/local/writereview?placeid=' + placeId;
+                    const mapsUrl = 'https://www.google.com/maps/place/?q=place_id:' + placeId;
+
+                    let headerHTML =
+                        '<div class="bg-white rounded-2xl shadow-md border border-stone-200/60 p-6 md:p-8 mb-6">' +
+                            '<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">' +
+                                '<div class="flex items-center gap-4">' +
+                                    '<div>' + googleLogoSVG + '</div>' +
+                                    '<span class="text-xl font-semibold text-stone-800">Reviews</span>' +
+                                '</div>' +
+                                '<a href="' + reviewUrl + '" target="_blank" class="bg-[#4285F4] hover:bg-[#3367D6] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors whitespace-nowrap">Review us on Google</a>' +
+                            '</div>' +
+                            '<div class="flex items-center gap-3 mt-4">' +
+                                '<span class="text-4xl font-bold text-stone-900">' + (data.rating || '5.0') + '</span>' +
+                                '<div class="flex flex-col">' +
+                                    '<div class="flex items-center gap-0.5">' + renderStars(data.rating || 5, 22) + '</div>' +
+                                    '<a href="' + mapsUrl + '" target="_blank" class="text-sm text-stone-500 hover:text-stone-700 transition-colors">(' + (data.user_ratings_total || '').toLocaleString('de-DE') + ')</a>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+
+                    let slidesHTML = '';
+                    data.reviews.forEach(function(r) {
+                        const profileImg = r.profile_photo_url
+                            ? '<img src="' + r.profile_photo_url + '" alt="' + r.author_name + '" class="w-11 h-11 rounded-full object-cover">'
+                            : '<div class="w-11 h-11 rounded-full bg-stone-300 flex items-center justify-center text-white font-bold text-lg">' + (r.author_name ? r.author_name.charAt(0) : '?') + '</div>';
+
+                        const reviewText = r.text.length > 180 ? r.text.substring(0, 180) + '...' : r.text;
+
+                        slidesHTML +=
+                            '<div class="swiper-slide h-auto">' +
+                                '<div class="bg-white rounded-2xl shadow-md border border-stone-200/60 p-6 h-full flex flex-col">' +
+                                    '<div class="flex items-center gap-3 mb-3">' +
+                                        '<div class="relative flex-shrink-0">' +
+                                            profileImg +
+                                            '<div class="absolute -bottom-0.5 -right-0.5 bg-white rounded-full p-px">' +
+                                                '<svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4285F4"/><path d="M8 12l3 3 5-5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+                                            '</div>' +
+                                        '</div>' +
+                                        '<div class="min-w-0">' +
+                                            '<div class="flex items-center gap-1.5">' +
+                                                '<span class="font-semibold text-stone-800 text-sm truncate">' + r.author_name + '</span>' +
+                                            '</div>' +
+                                            '<span class="text-xs text-stone-400">' + r.relative_time_description + '</span>' +
+                                        '</div>' +
+                                    '</div>' +
+                                    '<div class="flex items-center gap-0.5 mb-3">' + renderStars(r.rating, 18) + '</div>' +
+                                    '<p class="text-sm text-stone-600 leading-relaxed flex-1">' + reviewText + '</p>' +
+                                '</div>' +
+                            '</div>';
+                    });
+
+                    container.innerHTML = headerHTML +
+                        '<div class="relative">' +
+                            '<div class="swiper reviewSwiper overflow-visible">' +
+                                '<div class="swiper-wrapper pb-2">' + slidesHTML + '</div>' +
+                            '</div>' +
+                            '<div class="flex justify-center items-center gap-4 mt-8">' +
+                                '<button class="review-prev w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-700 hover:border-stone-400 transition-colors bg-white shadow-sm active:scale-95"><span class="material-symbols-outlined text-xl">chevron_left</span></button>' +
+                                '<div class="swiper-pagination-reviews flex gap-1.5"></div>' +
+                                '<button class="review-next w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-700 hover:border-stone-400 transition-colors bg-white shadow-sm active:scale-95"><span class="material-symbols-outlined text-xl">chevron_right</span></button>' +
+                            '</div>' +
+                        '</div>';
+
+                    new Swiper(".reviewSwiper", {
+                        slidesPerView: 1,
+                        spaceBetween: 16,
+                        autoplay: { delay: 5000, disableOnInteraction: true },
+                        pagination: { el: ".swiper-pagination-reviews", clickable: true, dynamicBullets: true },
+                        navigation: { nextEl: ".review-next", prevEl: ".review-prev" },
+                        breakpoints: {
+                            640: { slidesPerView: 2, spaceBetween: 16 },
+                            1024: { slidesPerView: 3, spaceBetween: 20 }
+                        }
+                    });
+
+                } else {
+                    container.innerHTML = '<p class="text-on-surface-variant text-center">Momentan keine Bewertungen verfügbar.</p>';
+                }
+            } catch(e) {
+                console.error("Failed to load reviews:", e);
+                container.innerHTML = '<p class="text-error text-center">Bewertungen konnten nicht geladen werden.</p>';
+            }
+        }
+    </script>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            // Google Reviews laden
+            if (window.location.protocol.includes("http")) {
+                fetchReviews();
+            }
 
              // ScrollSpy for Desktop Navigation Highlight
              const sections = document.querySelectorAll("section[id], footer[id]");
