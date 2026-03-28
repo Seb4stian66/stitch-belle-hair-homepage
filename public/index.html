@@ -101,16 +101,6 @@
         .brushed-bronze-gradient {
             background: linear-gradient(135deg, #79542e 0%, #956c44 100%);
         }
-        /* Reviews Pagination Dots */
-        .swiper-pagination-reviews .swiper-pagination-bullet {
-            width: 8px; height: 8px; border-radius: 50%;
-            background: var(--md-sys-color-on-surface-variant, #9e9e9e);
-            opacity: 0.3; transition: all 0.3s;
-        }
-        .swiper-pagination-reviews .swiper-pagination-bullet-active {
-            opacity: 1; background: var(--md-sys-color-primary, #79542e);
-            transform: scale(1.2);
-        }
         .ghost-border {
             border: 1px solid rgba(212, 196, 183, 0.2);
         }
@@ -602,8 +592,24 @@
     <!-- Swiper JS Library -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <!-- Custom Google Reviews Widget -->
+    <!-- Statische Google Reviews (echte Bewertungen, kein API-Call nötig) -->
     <script>
+        const BELLE_HAIR_REVIEWS = {
+            rating: 4.9,
+            user_ratings_total: 163,
+            place_id: 'ChIJYZL2jOgZuUcRB0gzi_U7Mac',
+            reviews: [
+                { author_name: "Vivian", profile_photo_url: "https://lh3.googleusercontent.com/a-/ALV-UjW1TbWrjkVWPDdMv_jwOsi09pSr0bgFk-pRetBfbtzl9dwbLZs=s128-c0x00000000-cc-rp-mo", rating: 5, relative_time_description: "vor kurzem", text: "Ich bin seit ca. 4 Jahren Kundin bei Fati und extrem zufrieden! Ich fühle mich immer wohl in ihrem Salon und die Ergebnisse sind wunderschön \u2665\ufe0f" },
+                { author_name: "Nicole", profile_photo_url: "https://lh3.googleusercontent.com/a-/ALV-UjUyJ_jbwimDqy8mfYnGdW7DYybea-J8OeHViI-ZE0eC1W_4s1_w=s128-c0x00000000-cc-rp-mo", rating: 5, relative_time_description: "vor 3 Monaten", text: "Absolut empfehlenswert! Ich lasse mir hier schon seit einiger Zeit regelmäßig unterschiedliche Braids-Styles machen und bin jedes Mal begeistert und mehr als zufrieden. Wünsche werden umgesetzt und dafür wird sich auch die Zeit genommen. Super Arbeit, entspannte Atmosphäre und richtig liebe Menschen." },
+                { author_name: "Nicole Hein", profile_photo_url: "https://lh3.googleusercontent.com/a/ACg8ocJJ-4AwrmEdFRgPKG3QIj32OQRCR4mL3hh2DAww1YLd4osdWA=s128-c0x00000000-cc-rp-mo", rating: 5, relative_time_description: "vor 2 Wochen", text: "Ich bin durch Empfehlungen zu Fati gekommen. Seit 2 Jahren bin ich hier Kundin. Ich bin super zufrieden. Fati kann ich jedem empfehlen. Ich bin Stammkundin und werde es bleiben. \ud83d\ude18\u2665\ufe0f" },
+                { author_name: "Zella Ostwald", profile_photo_url: "https://lh3.googleusercontent.com/a/ACg8ocK5ctVi2jEh7fMhPco4kT1o3zKIIvH0DLxWQOP6A8AbIgGU9Q=s128-c0x00000000-cc-rp-mo-ba3", rating: 5, relative_time_description: "vor 2 Monaten", text: "Ich war bei Belle Hair by Mrs Fati und bin sehr zufrieden. Alles ging schnell und unkompliziert, super nette Leute und eine sehr angenehme, entspannte Atmosphäre. Man fühlt sich direkt wohl \u2013 absolut empfehlenswert!" },
+                { author_name: "Becci D.", profile_photo_url: "https://lh3.googleusercontent.com/a/ACg8ocIuEDMmPLqPFG0om1A6cbPaHw31qtkbA17LgjM9ZgUufTJWDw=s128-c0x00000000-cc-rp-mo", rating: 5, relative_time_description: "vor 4 Monaten", text: "Ich gehe seit mehr als 13 Jahre zu Fati und bin immer zufrieden gewesen mit ihrer Arbeit. Sie macht tolle Frisuren und versucht alles um das umsetzen was der Kunde sich wünscht. Ich kann sie von ganzen Herzen weiterempfehlen\u2764\ufe0f Sie ist eine tolle Frau!" },
+                { author_name: "Tim Schalker", profile_photo_url: "https://lh3.googleusercontent.com/a/ACg8ocJrRnrlUy928fIisyleupFPJ1Ab3e2No2l0ksEI6pAwyP2O-A=s128-c0x00000000-cc-rp-mo", rating: 5, relative_time_description: "vor 5 Monaten", text: "Ich bin der Assistent einer Blinden Kundin von Fati. Der Service bei ihr ist wirklich super. \u201eIch hatte mir das erste Mal Rastas flechten lassen. Jetzt schon des öfteren dort gewesen und gehe auch gerne wieder hin. Es wird viel Wert auf eine persönliche Beratung gelegt. Und das Preis/Leistungsverhältnis stimmt.\u201c" },
+                { author_name: "Tabea Dampha", profile_photo_url: "https://lh3.googleusercontent.com/a/ACg8ocKdNfpkSm74tyjDRH1hMW2Rj6Ac9RnnsNirOQv8bA6ZIxmu3g=s128-c0x00000000-cc-rp-mo-ba3", rating: 5, relative_time_description: "vor einer Woche", text: "Sehr zufrieden \u2764\ufe0f" },
+                { author_name: "Hilla O.", profile_photo_url: "https://lh3.googleusercontent.com/a/ACg8ocI9dL5L-X08s-zPVlz2caM_vBN5Y6TQ9Lk-dNbj7YaKkDIf_eg=s128-c0x00000000-cc-rp-mo", rating: 5, relative_time_description: "vor 2 Monaten", text: "Alles top, sehr empfehlenswert!" }
+            ]
+        };
+
         const googleLogoSVG = '<svg viewBox="0 0 272 92" width="78" height="26"><path fill="#4285F4" d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z"/><path fill="#EA4335" d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.86 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.54 12.51-13.44z"/><path fill="#FBBC05" d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z"/><path fill="#4285F4" d="M225 3v65h-9.5V3h9.5z"/><path fill="#34A853" d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.2 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z"/><path fill="#EA4335" d="M35.29 41.19V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49-.01z"/></svg>';
 
         function renderStars(rating, size) {
@@ -621,109 +627,89 @@
             return html;
         }
 
-        async function fetchReviews() {
+        function renderReviews() {
             const container = document.getElementById("reviews-container");
             if(!container) return;
+            const data = BELLE_HAIR_REVIEWS;
+            const reviewUrl = 'https://search.google.com/local/writereview?placeid=' + data.place_id;
+            const mapsUrl = 'https://www.google.com/maps/place/?q=place_id:' + data.place_id;
 
-            try {
-                const response = await fetch("/api/reviews");
-                if(!response.ok) throw new Error("API-Fehler");
-                const data = await response.json();
+            let headerHTML =
+                '<div class="bg-white rounded-2xl shadow-md border border-stone-200/60 p-6 md:p-8 mb-6">' +
+                    '<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">' +
+                        '<div class="flex items-center gap-4">' +
+                            '<div>' + googleLogoSVG + '</div>' +
+                            '<span class="text-xl font-semibold text-stone-800">Reviews</span>' +
+                        '</div>' +
+                        '<a href="' + reviewUrl + '" target="_blank" rel="noopener noreferrer" class="bg-[#4285F4] hover:bg-[#3367D6] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors whitespace-nowrap">Review us on Google</a>' +
+                    '</div>' +
+                    '<div class="flex items-center gap-3 mt-4">' +
+                        '<span class="text-4xl font-bold text-stone-900">' + data.rating + '</span>' +
+                        '<div class="flex flex-col">' +
+                            '<div class="flex items-center gap-0.5">' + renderStars(data.rating, 22) + '</div>' +
+                            '<a href="' + mapsUrl + '" target="_blank" rel="noopener noreferrer" class="text-sm text-stone-500 hover:text-stone-700 transition-colors">' + data.user_ratings_total + ' Bewertungen</a>' +
+                        '</div>' +
+                    '</div>' +
+                '</div>';
 
-                if(data.reviews && data.reviews.length > 0) {
-                    const placeId = data.place_id || '';
-                    const reviewUrl = 'https://search.google.com/local/writereview?placeid=' + placeId;
-                    const mapsUrl = 'https://www.google.com/maps/place/?q=place_id:' + placeId;
+            let slidesHTML = '';
+            data.reviews.forEach(function(r) {
+                if (!r.text) return;
+                const profileImg = r.profile_photo_url
+                    ? '<img src="' + r.profile_photo_url + '" alt="' + r.author_name + '" loading="lazy" class="w-11 h-11 rounded-full object-cover">'
+                    : '<div class="w-11 h-11 rounded-full bg-stone-300 flex items-center justify-center text-white font-bold text-lg">' + r.author_name.charAt(0) + '</div>';
 
-                    let headerHTML =
-                        '<div class="bg-white rounded-2xl shadow-md border border-stone-200/60 p-6 md:p-8 mb-6">' +
-                            '<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">' +
-                                '<div class="flex items-center gap-4">' +
-                                    '<div>' + googleLogoSVG + '</div>' +
-                                    '<span class="text-xl font-semibold text-stone-800">Reviews</span>' +
-                                '</div>' +
-                                '<a href="' + reviewUrl + '" target="_blank" class="bg-[#4285F4] hover:bg-[#3367D6] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors whitespace-nowrap">Review us on Google</a>' +
-                            '</div>' +
-                            '<div class="flex items-center gap-3 mt-4">' +
-                                '<span class="text-4xl font-bold text-stone-900">' + (data.rating || '5.0') + '</span>' +
-                                '<div class="flex flex-col">' +
-                                    '<div class="flex items-center gap-0.5">' + renderStars(data.rating || 5, 22) + '</div>' +
-                                    '<a href="' + mapsUrl + '" target="_blank" class="text-sm text-stone-500 hover:text-stone-700 transition-colors">(' + (data.user_ratings_total || '').toLocaleString('de-DE') + ')</a>' +
-                                '</div>' +
-                            '</div>' +
-                        '</div>';
-
-                    let slidesHTML = '';
-                    data.reviews.forEach(function(r) {
-                        const profileImg = r.profile_photo_url
-                            ? '<img src="' + r.profile_photo_url + '" alt="' + r.author_name + '" class="w-11 h-11 rounded-full object-cover">'
-                            : '<div class="w-11 h-11 rounded-full bg-stone-300 flex items-center justify-center text-white font-bold text-lg">' + (r.author_name ? r.author_name.charAt(0) : '?') + '</div>';
-
-                        const reviewText = r.text.length > 180 ? r.text.substring(0, 180) + '...' : r.text;
-
-                        slidesHTML +=
-                            '<div class="swiper-slide h-auto">' +
-                                '<div class="bg-white rounded-2xl shadow-md border border-stone-200/60 p-6 h-full flex flex-col">' +
-                                    '<div class="flex items-center gap-3 mb-3">' +
-                                        '<div class="relative flex-shrink-0">' +
-                                            profileImg +
-                                            '<div class="absolute -bottom-0.5 -right-0.5 bg-white rounded-full p-px">' +
-                                                '<svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4285F4"/><path d="M8 12l3 3 5-5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
-                                            '</div>' +
-                                        '</div>' +
-                                        '<div class="min-w-0">' +
-                                            '<div class="flex items-center gap-1.5">' +
-                                                '<span class="font-semibold text-stone-800 text-sm truncate">' + r.author_name + '</span>' +
-                                            '</div>' +
-                                            '<span class="text-xs text-stone-400">' + r.relative_time_description + '</span>' +
-                                        '</div>' +
+                slidesHTML +=
+                    '<div class="swiper-slide h-auto">' +
+                        '<div class="bg-white rounded-2xl shadow-md border border-stone-200/60 p-6 h-full flex flex-col">' +
+                            '<div class="flex items-center gap-3 mb-3">' +
+                                '<div class="relative flex-shrink-0">' +
+                                    profileImg +
+                                    '<div class="absolute -bottom-0.5 -right-0.5 bg-white rounded-full p-px">' +
+                                        '<svg width="14" height="14" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#4285F4"/><path d="M8 12l3 3 5-5" stroke="#fff" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
                                     '</div>' +
-                                    '<div class="flex items-center gap-0.5 mb-3">' + renderStars(r.rating, 18) + '</div>' +
-                                    '<p class="text-sm text-stone-600 leading-relaxed flex-1">' + reviewText + '</p>' +
                                 '</div>' +
-                            '</div>';
-                    });
-
-                    container.innerHTML = headerHTML +
-                        '<div class="relative">' +
-                            '<div class="swiper reviewSwiper overflow-visible">' +
-                                '<div class="swiper-wrapper pb-2">' + slidesHTML + '</div>' +
+                                '<div class="min-w-0">' +
+                                    '<span class="font-semibold text-stone-800 text-sm truncate block">' + r.author_name + '</span>' +
+                                    '<span class="text-xs text-stone-400">' + r.relative_time_description + '</span>' +
+                                '</div>' +
                             '</div>' +
-                            '<div class="flex justify-center items-center gap-4 mt-8">' +
-                                '<button class="review-prev w-9 h-9 rounded-full flex items-center justify-center text-primary hover:text-primary-fixed-dim transition-colors active:scale-95"><span class="material-symbols-outlined text-lg">chevron_left</span></button>' +
-                                '<div class="swiper-pagination-reviews flex gap-1.5"></div>' +
-                                '<button class="review-next w-9 h-9 rounded-full flex items-center justify-center text-primary hover:text-primary-fixed-dim transition-colors active:scale-95"><span class="material-symbols-outlined text-lg">chevron_right</span></button>' +
-                            '</div>' +
-                        '</div>';
+                            '<div class="flex items-center gap-0.5 mb-3">' + renderStars(r.rating, 18) + '</div>' +
+                            '<p class="text-sm text-stone-600 leading-relaxed flex-1">' + r.text + '</p>' +
+                        '</div>' +
+                    '</div>';
+            });
 
-                    new Swiper(".reviewSwiper", {
-                        slidesPerView: 1,
-                        spaceBetween: 16,
-                        autoplay: { delay: 5000, disableOnInteraction: true },
-                        pagination: { el: ".swiper-pagination-reviews", clickable: true, dynamicBullets: true },
-                        navigation: { nextEl: ".review-next", prevEl: ".review-prev" },
-                        breakpoints: {
-                            640: { slidesPerView: 2, spaceBetween: 16 },
-                            1024: { slidesPerView: 3, spaceBetween: 20 }
-                        }
-                    });
+            container.innerHTML = headerHTML +
+                '<div class="relative">' +
+                    '<div class="swiper reviewSwiper overflow-visible">' +
+                        '<div class="swiper-wrapper pb-2">' + slidesHTML + '</div>' +
+                    '</div>' +
+                    '<div class="flex justify-center items-center gap-4 mt-8">' +
+                        '<button class="review-prev w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-700 hover:border-stone-400 transition-colors bg-white shadow-sm active:scale-95"><span class="material-symbols-outlined text-xl">chevron_left</span></button>' +
+                        '<div class="swiper-pagination-reviews flex gap-1.5"></div>' +
+                        '<button class="review-next w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-700 hover:border-stone-400 transition-colors bg-white shadow-sm active:scale-95"><span class="material-symbols-outlined text-xl">chevron_right</span></button>' +
+                    '</div>' +
+                '</div>';
 
-                } else {
-                    container.innerHTML = '<p class="text-on-surface-variant text-center">Momentan keine Bewertungen verfügbar.</p>';
+            new Swiper(".reviewSwiper", {
+                slidesPerView: 1,
+                spaceBetween: 16,
+                autoplay: { delay: 5000, disableOnInteraction: true },
+                pagination: { el: ".swiper-pagination-reviews", clickable: true, dynamicBullets: true },
+                navigation: { nextEl: ".review-next", prevEl: ".review-prev" },
+                breakpoints: {
+                    640: { slidesPerView: 2, spaceBetween: 16 },
+                    1024: { slidesPerView: 3, spaceBetween: 20 }
                 }
-            } catch(e) {
-                console.error("Failed to load reviews:", e);
-                container.innerHTML = '<p class="text-error text-center">Bewertungen konnten nicht geladen werden.</p>';
-            }
+            });
         }
     </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Google Reviews laden
-            if (window.location.protocol.includes("http")) {
-                fetchReviews();
-            }
+            // Google Reviews rendern (statisch, kein API-Call)
+            renderReviews();
 
              // ScrollSpy for Desktop Navigation Highlight
              const sections = document.querySelectorAll("section[id], footer[id]");
