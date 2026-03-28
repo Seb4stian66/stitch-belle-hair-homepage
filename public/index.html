@@ -101,6 +101,16 @@
         .brushed-bronze-gradient {
             background: linear-gradient(135deg, #79542e 0%, #956c44 100%);
         }
+        /* Reviews Pagination Dots */
+        .swiper-pagination-reviews .swiper-pagination-bullet {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--md-sys-color-on-surface-variant, #9e9e9e);
+            opacity: 0.3; transition: all 0.3s;
+        }
+        .swiper-pagination-reviews .swiper-pagination-bullet-active {
+            opacity: 1; background: var(--md-sys-color-primary, #79542e);
+            transform: scale(1.2);
+        }
         .ghost-border {
             border: 1px solid rgba(212, 196, 183, 0.2);
         }
@@ -680,9 +690,9 @@
                                 '<div class="swiper-wrapper pb-2">' + slidesHTML + '</div>' +
                             '</div>' +
                             '<div class="flex justify-center items-center gap-4 mt-8">' +
-                                '<button class="review-prev w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-700 hover:border-stone-400 transition-colors bg-white shadow-sm active:scale-95"><span class="material-symbols-outlined text-xl">chevron_left</span></button>' +
+                                '<button class="review-prev w-9 h-9 rounded-full flex items-center justify-center text-primary hover:text-primary-fixed-dim transition-colors active:scale-95"><span class="material-symbols-outlined text-lg">chevron_left</span></button>' +
                                 '<div class="swiper-pagination-reviews flex gap-1.5"></div>' +
-                                '<button class="review-next w-10 h-10 rounded-full border border-stone-200 flex items-center justify-center text-stone-400 hover:text-stone-700 hover:border-stone-400 transition-colors bg-white shadow-sm active:scale-95"><span class="material-symbols-outlined text-xl">chevron_right</span></button>' +
+                                '<button class="review-next w-9 h-9 rounded-full flex items-center justify-center text-primary hover:text-primary-fixed-dim transition-colors active:scale-95"><span class="material-symbols-outlined text-lg">chevron_right</span></button>' +
                             '</div>' +
                         '</div>';
 
