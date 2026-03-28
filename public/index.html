@@ -445,22 +445,36 @@
         <div class="flex-1 overflow-y-auto p-8" id="cart-items">
             <p class="text-stone-400 text-center py-8">Dein Warenkorb ist leer</p>
         </div>
-        <!-- Footer mit Summe & Checkout -->
+        <!-- Footer mit Formular & Checkout -->
         <div class="px-8 pb-8 pt-4 border-t border-stone-200 dark:border-stone-700 flex-shrink-0" id="cart-footer" style="display:none;">
-            <div class="flex justify-between items-center mb-6">
+            <!-- Kundendaten -->
+            <div class="space-y-3 mb-5">
+                <input type="text" id="checkout-name" placeholder="Dein Name *" class="w-full px-4 py-3 rounded-lg border border-stone-200 dark:border-stone-600 bg-white dark:bg-stone-800 text-stone-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors" />
+                <div class="flex gap-3">
+                    <label class="flex-1 flex items-center gap-2 px-4 py-3 rounded-lg border border-stone-200 dark:border-stone-600 cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5 transition-colors">
+                        <input type="radio" name="checkout-type" value="abholung" checked class="accent-[var(--md-sys-color-primary,#79542e)]" />
+                        <span class="text-sm text-stone-700 dark:text-stone-300">Abholung im Salon</span>
+                    </label>
+                    <label class="flex-1 flex items-center gap-2 px-4 py-3 rounded-lg border border-stone-200 dark:border-stone-600 cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/5 transition-colors">
+                        <input type="radio" name="checkout-type" value="versand" class="accent-[var(--md-sys-color-primary,#79542e)]" />
+                        <span class="text-sm text-stone-700 dark:text-stone-300">Versand</span>
+                    </label>
+                </div>
+                <div id="checkout-address-wrap" class="hidden">
+                    <textarea id="checkout-address" placeholder="Straße, Hausnr., PLZ, Ort" rows="2" class="w-full px-4 py-3 rounded-lg border border-stone-200 dark:border-stone-600 bg-white dark:bg-stone-800 text-stone-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"></textarea>
+                </div>
+            </div>
+            <!-- Summe -->
+            <div class="flex justify-between items-center mb-5">
                 <span class="font-bold text-stone-900 dark:text-white text-lg">Gesamt</span>
                 <span class="font-bold text-primary text-xl" id="cart-total">0,00 €</span>
             </div>
-            <div class="space-y-3">
-                <button onclick="checkoutWhatsApp()" class="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest active:scale-95 transition-all cursor-pointer">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    Bestellung via WhatsApp
-                </button>
-                <button onclick="checkoutPayPal()" class="w-full flex items-center justify-center gap-3 bg-[#0070BA] hover:bg-[#005EA6] text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest active:scale-95 transition-all cursor-pointer">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 00-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 00.554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 01.92-.789h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.774-4.47z"/></svg>
-                    Mit PayPal bezahlen
-                </button>
-            </div>
+            <!-- Bestell-Button -->
+            <button onclick="submitOrder()" class="w-full flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BD5A] text-white font-bold py-4 rounded-xl text-sm uppercase tracking-widest active:scale-95 transition-all cursor-pointer">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                Bestellung absenden
+            </button>
+            <p class="text-stone-400 text-xs text-center mt-3">Die Bezahlung erfolgt bequem im Chat</p>
         </div>
     </div>
 </div>
@@ -690,16 +704,47 @@
             }, 300);
         }
 
-        function checkoutWhatsApp() {
-            const items = cart.map(i => `${i.qty}x ${i.name} (${formatPrice(i.price)})`).join('\n');
-            const total = formatPrice(getCartTotal());
-            const msg = encodeURIComponent(`Hallo, ich möchte gerne folgende Produkte bestellen:\n\n${items}\n\nGesamt: ${total}\n\nVielen Dank!`);
-            window.open('https://wa.me/491738805188?text=' + msg, '_blank');
-        }
+        // Versand/Abholung Toggle
+        document.addEventListener('change', function(e) {
+            if (e.target.name === 'checkout-type') {
+                const addrWrap = document.getElementById('checkout-address-wrap');
+                if (addrWrap) addrWrap.classList.toggle('hidden', e.target.value !== 'versand');
+            }
+        });
 
-        function checkoutPayPal() {
-            const total = getCartTotal().toFixed(2);
-            window.open('https://paypal.me/BelleHairFati/' + total, '_blank');
+        function submitOrder() {
+            const name = document.getElementById('checkout-name').value.trim();
+            if (!name) {
+                document.getElementById('checkout-name').focus();
+                document.getElementById('checkout-name').classList.add('border-red-400', 'ring-1', 'ring-red-400');
+                setTimeout(() => document.getElementById('checkout-name').classList.remove('border-red-400', 'ring-1', 'ring-red-400'), 2000);
+                return;
+            }
+
+            const type = document.querySelector('input[name="checkout-type"]:checked').value;
+            const address = document.getElementById('checkout-address')?.value.trim() || '';
+
+            if (type === 'versand' && !address) {
+                document.getElementById('checkout-address').focus();
+                document.getElementById('checkout-address').classList.add('border-red-400', 'ring-1', 'ring-red-400');
+                setTimeout(() => document.getElementById('checkout-address').classList.remove('border-red-400', 'ring-1', 'ring-red-400'), 2000);
+                return;
+            }
+
+            const items = cart.map(i => `  ${i.qty}x ${i.name} — ${formatPrice(i.price * i.qty)}`).join('\n');
+            const total = formatPrice(getCartTotal());
+            const deliveryInfo = type === 'versand' ? `\n\nLieferadresse:\n${address}` : '\n\nAbholung im Salon';
+
+            const msg = encodeURIComponent(
+                `Hallo, ich möchte gerne bestellen:\n\n${items}\n\nGesamt: ${total}\n\nName: ${name}${deliveryInfo}\n\nVielen Dank!`
+            );
+
+            window.open('https://wa.me/491738805188?text=' + msg, '_blank');
+
+            // Warenkorb leeren
+            cart = [];
+            updateCartUI();
+            closeCartModal();
         }
 
         // Copyright Jahr
