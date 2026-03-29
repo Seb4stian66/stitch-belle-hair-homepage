@@ -154,7 +154,7 @@
 <!-- Hero Section -->
 <section class="relative w-full flex items-center justify-center overflow-hidden h-[65vh] md:h-[100dvh] md:min-h-screen">
 <div class="absolute inset-0 z-0 overflow-hidden bg-stone-900">
-<img alt="Belle Hair Salon — Fati bei der Arbeit" class="w-full h-full object-cover object-[70%_25%] md:object-[center_25%] brightness-[0.7]" src="images/hero_salon_fati.jpg" />
+<img alt="Belle Hair Salon — Fati bei der Arbeit" class="w-full h-full object-cover object-[70%_15%] md:object-[center_15%] brightness-[0.7]" src="images/hero_salon_fati.jpg" />
 </div>
 <div class="relative z-10 text-center px-6 max-w-5xl">
 <span class="text-white/80 text-[10px] uppercase tracking-[0.3em] font-bold mb-4 md:mb-8 block">Meisterbetrieb · Dortmund</span>
@@ -1148,11 +1148,11 @@
                 return `<li>${short}</li>`;
             }).join('\n');
 
-            return `<div class="service-card bg-surface-container-lowest p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="${slug}" onclick="toggleService('${slug}')">
-                <span class="material-symbols-outlined text-primary text-4xl mb-8">${icon}</span>
-                <h3 class="font-headline text-2xl mb-4 group-hover:text-primary transition-colors">${katName}</h3>
-                <ul class="text-on-surface-variant space-y-3 text-sm">${previews}</ul>
-                <span class="material-symbols-outlined text-primary/40 text-2xl mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
+            return `<div class="service-card bg-surface-container-lowest p-5 md:p-10 rounded-xl ghost-border hover:shadow-xl hover:scale-[1.02] transition-all duration-300 cursor-pointer group" data-service="${slug}" onclick="toggleService('${slug}')">
+                <span class="material-symbols-outlined text-primary text-2xl md:text-4xl mb-3 md:mb-8">${icon}</span>
+                <h3 class="font-headline text-base md:text-2xl mb-2 md:mb-4 group-hover:text-primary transition-colors">${katName}</h3>
+                <ul class="text-on-surface-variant space-y-1.5 md:space-y-3 text-xs md:text-sm hidden md:block">${previews}</ul>
+                <span class="material-symbols-outlined text-primary/40 text-xl md:text-2xl mt-3 md:mt-6 block transition-transform duration-300 service-chevron">expand_more</span>
             </div>`;
         }
 
