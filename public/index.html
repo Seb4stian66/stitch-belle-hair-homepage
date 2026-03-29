@@ -122,7 +122,7 @@
 <a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#shop">Shop</a>
 <a class="nav-item text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-all text-xs font-medium uppercase tracking-widest Manrope border-b-2 border-transparent py-1" href="#kontakt">Kontakt</a>
 </div>
-<button onclick="openCartModal()" class="hidden md:flex items-center justify-center relative text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-colors cursor-pointer" aria-label="Warenkorb">
+<button onclick="openCartModal()" class="flex items-center justify-center relative text-stone-500 dark:text-stone-400 hover:text-stone-800 dark:hover:text-stone-100 transition-colors cursor-pointer" aria-label="Warenkorb">
     <span class="material-symbols-outlined text-2xl">shopping_bag</span>
     <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center hidden">0</span>
 </button>
@@ -154,7 +154,7 @@
 <!-- Hero Section -->
 <section class="relative w-full flex items-center justify-center overflow-hidden h-[65vh] md:h-[100dvh] md:min-h-screen">
 <div class="absolute inset-0 z-0 overflow-hidden bg-stone-900">
-<img alt="Belle Hair Salon — Fati bei der Arbeit" class="w-full h-full object-cover object-[70%_25%] md:object-[center_25%] brightness-[0.4]" src="images/hero_salon_fati.jpg" />
+<img alt="Belle Hair Salon — Fati bei der Arbeit" class="w-full h-full object-cover object-[70%_25%] md:object-[center_25%] brightness-[0.7]" src="images/hero_salon_fati.jpg" />
 </div>
 <div class="relative z-10 text-center px-6 max-w-5xl">
 <span class="text-white/80 text-[10px] uppercase tracking-[0.3em] font-bold mb-4 md:mb-8 block">Meisterbetrieb · Dortmund</span>
@@ -216,7 +216,7 @@
     <span class="material-symbols-outlined text-sm">touch_app</span>
     Klicken Sie auf eine Kategorie, um die Preise zu sehen
 </p>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="services-grid">
+<div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4" id="services-grid">
     <div class="col-span-full text-center py-12 text-on-surface-variant animate-pulse">Leistungen werden geladen...</div>
 </div>
 <!-- Akkordeon Container -->
@@ -1183,7 +1183,7 @@
             const priceContainer = document.getElementById('services-pricelists');
 
             const colCount = Math.min(categoryOrder.length, 4);
-            grid.className = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${colCount} gap-4`;
+            grid.className = `grid grid-cols-2 md:grid-cols-2 lg:grid-cols-${colCount} gap-4`;
 
             let cardsHTML = '';
             let pricelistsHTML = '';
