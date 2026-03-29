@@ -395,13 +395,15 @@
             <h3 class="text-white text-lg font-bold uppercase tracking-widest">Termin vereinbaren</h3>
             <p class="text-white/60 text-sm mt-1">Wir freuen uns auf Ihren Anruf</p>
         </div>
-        <!-- Leistung auswählen -->
+        <!-- Leistungen auswählen (Mehrfachauswahl) -->
         <div class="px-8 pt-6 pb-2">
-            <label class="text-[10px] uppercase tracking-widest font-bold text-stone-500 dark:text-stone-400 mb-2 block">Gewünschte Leistung</label>
-            <select id="booking-service" class="w-full px-4 py-3 rounded-lg border border-stone-200 dark:border-stone-600 bg-white dark:bg-stone-800 text-stone-900 dark:text-white text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none cursor-pointer" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%2212%22 viewBox=%220 0 12 12%22><path fill=%22%2378716c%22 d=%22M2 4l4 4 4-4%22/></svg>'); background-repeat: no-repeat; background-position: right 12px center;">
-                <option value="">Bitte auswählen…</option>
-                <option value="Sonstiges">Sonstiges</option>
-            </select>
+            <label class="text-[10px] uppercase tracking-widest font-bold text-stone-500 dark:text-stone-400 mb-3 block">Gewünschte Leistungen</label>
+            <div id="booking-services-list" class="flex flex-wrap gap-2">
+                <label class="booking-chip flex items-center gap-2 px-3 py-2 rounded-full border border-stone-200 dark:border-stone-600 cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/10 has-[:checked]:text-primary transition-all text-sm text-stone-600 dark:text-stone-300 hover:border-stone-400">
+                    <input type="checkbox" name="booking-service" value="Sonstiges" class="hidden" onchange="updateBookingWhatsAppLink()" />
+                    <span>Sonstiges</span>
+                </label>
+            </div>
         </div>
         <!-- Options -->
         <div class="p-8 pt-4 space-y-4">
@@ -555,40 +557,34 @@
 
         // Booking Modal
         function updateBookingWhatsAppLink() {
-            const select = document.getElementById('booking-service');
+            const checkboxes = document.querySelectorAll('input[name="booking-service"]:checked');
             const link = document.getElementById('booking-whatsapp-link');
-            if (!select || !link) return;
-            const service = select.value;
+            if (!link) return;
+            const selected = Array.from(checkboxes).map(cb => cb.value);
             let msg;
-            if (service && service !== '') {
-                msg = `Hallo, ich möchte gerne einen Termin vereinbaren.\n\nGewünschte Leistung: ${service}`;
+            if (selected.length > 0) {
+                msg = `Hallo, ich möchte gerne einen Termin vereinbaren.\n\nGewünschte Leistungen:\n${selected.map(s => '• ' + s).join('\n')}`;
             } else {
                 msg = 'Hallo, ich möchte gerne einen Termin vereinbaren.';
             }
             link.href = 'https://wa.me/491738805188?text=' + encodeURIComponent(msg);
         }
 
-        // Dropdown mit Leistungen aus Google Sheets befüllen
+        // Checkboxen mit Leistungen aus Google Sheets befüllen
         function populateBookingServices(categoryNames) {
-            const select = document.getElementById('booking-service');
-            if (!select) return;
-            // Bestehende dynamische Optionen entfernen (nur "Bitte auswählen" und "Sonstiges" behalten)
-            const placeholder = select.querySelector('option[value=""]');
-            const sonstiges = select.querySelector('option[value="Sonstiges"]');
-            select.innerHTML = '';
-            if (placeholder) select.appendChild(placeholder);
+            const container = document.getElementById('booking-services-list');
+            if (!container) return;
+            // "Sonstiges"-Chip merken
+            const sonstigesChip = container.querySelector('label:last-child');
+            container.innerHTML = '';
             categoryNames.forEach(name => {
-                const opt = document.createElement('option');
-                opt.value = name;
-                opt.textContent = name;
-                select.appendChild(opt);
+                const label = document.createElement('label');
+                label.className = 'booking-chip flex items-center gap-2 px-3 py-2 rounded-full border border-stone-200 dark:border-stone-600 cursor-pointer has-[:checked]:border-primary has-[:checked]:bg-primary/10 has-[:checked]:text-primary transition-all text-sm text-stone-600 dark:text-stone-300 hover:border-stone-400';
+                label.innerHTML = `<input type="checkbox" name="booking-service" value="${name}" class="hidden" onchange="updateBookingWhatsAppLink()" /><span>${name}</span>`;
+                container.appendChild(label);
             });
-            if (sonstiges) select.appendChild(sonstiges);
+            if (sonstigesChip) container.appendChild(sonstigesChip);
         }
-
-        document.addEventListener('change', function(e) {
-            if (e.target.id === 'booking-service') updateBookingWhatsAppLink();
-        });
 
         function openBookingModal() {
             const modal = document.getElementById('booking-modal');
