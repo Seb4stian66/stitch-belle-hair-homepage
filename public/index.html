@@ -1061,67 +1061,61 @@
         });
     </script>
 
-    <!-- Komplett dynamisches Leistungen-System aus Google Sheets -->
+    <!-- Leistungen-System (statische Daten) -->
     <script>
-        // ===== GOOGLE SHEETS URL =====
-        const SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vR69OsmAKRcPqgmHjt0jfTe1fK9RLoRKn5iQb_T9BqdTD1IisOqgPuoX4Ogam45cJn-_W3EkxBHgE97/pub?output=csv';
-
-        // Icons werden automatisch anhand von Schlüsselwörtern zugewiesen
-        const ICON_KEYWORDS = [
-            { keywords: ['schnitt', 'cut', 'styling', 'farbe', 'color'], icon: 'content_cut' },
-            { keywords: ['braid', 'zöpf', 'cornrow', 'loc', 'rasta'], icon: 'gesture' },
-            { keywords: ['verlängerung', 'extension', 'tressen', 'wig', 'perück'], icon: 'face_3' },
-            { keywords: ['academy', 'kurs', 'workshop', 'ausbildung', 'schul'], icon: 'school' },
-            { keywords: ['beauty', 'makeup', 'nagel', 'nail', 'pflege'], icon: 'spa' },
-            { keywords: ['bart', 'barber', 'herren', 'men'], icon: 'face_6' },
+        // ===== LEISTUNGSDATEN =====
+        const SERVICE_DATA = [
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Schnitt & Styling', leistung: 'Damen — Waschen Schneiden Föhnen', preis: 'ab 20 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Schnitt & Styling', leistung: 'Herren Haarschnitt', preis: '15 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Schnitt & Styling', leistung: 'Kinder Haarschnitt (Mädchen)', preis: '12 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Schnitt & Styling', leistung: 'Kinder Haarschnitt (Jungs)', preis: '10 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Farbe & Technik', leistung: 'Bei Frisuren mit Haarverlängerung', preis: 'ab 30 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Farbe & Technik', leistung: 'Ansatz Farbe', preis: 'ab 35 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Farbe & Technik', leistung: 'Foliensträhnen', preis: 'ab 55 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Farbe & Technik', leistung: 'Dauerwelle', preis: 'ab 59 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Beauty', leistung: 'Augenbrauen zupfen', preis: '8 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Beauty', leistung: 'Augenbrauen färben', preis: '8 €' },
+            { kategorie: 'Schnitt Styling & Farbe', unterkategorie: 'Beauty', leistung: 'Wimpern färben', preis: '10 €' },
+            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Braids für Männer', preis: '25 – 150 €' },
+            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Braids / Rastazöpfe / Knotless / Boho-Braids', preis: '70 – 250 €' },
+            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Cornrows / Boxerbraids / Festivalfrisur', preis: '10 – 150 €' },
+            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Fauxlocs inkl. Einarbeitung', preis: '160 – 200 €' },
+            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Boxerbraids für Kinder (bis 12 J.) inkl. Kunsthaar', preis: '15 €' },
+            { kategorie: 'Haarverlängerung', unterkategorie: '', leistung: '100 Gramm · 40 cm inkl. Einarbeitung', preis: '250 €' },
+            { kategorie: 'Haarverlängerung', unterkategorie: '', leistung: '100 Gramm · 55 cm inkl. Einarbeitung', preis: '285 €' },
+            { kategorie: 'Haarverlängerung', unterkategorie: '', leistung: '100 Gramm · 70 cm inkl. Einarbeitung', preis: '310 €' },
+            { kategorie: 'Haarverlängerung', unterkategorie: '', leistung: 'Ponytail inkl. Einarbeitung mit Kunsthaar', preis: '50 – 80 €' },
+            { kategorie: 'Haarverlängerung', unterkategorie: '', leistung: 'Tressen hochsetzen', preis: '17 € / Reihe' },
+            { kategorie: 'Haarverlängerung', unterkategorie: '', leistung: 'Haarverdichtung 50 Gramm inkl. Einarbeitung', preis: '150 €' },
+            { kategorie: 'Braiding Academy', unterkategorie: '', leistung: 'Braids Schulung für Anfänger (1 Tag)', preis: '399 €' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Das lernst du', leistung: 'Vorbereitung der Haare', preis: '✓' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Das lernst du', leistung: 'Verschiedene Flechttechniken', preis: '✓' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Das lernst du', leistung: 'Boxerbraids / Braids / Knotless Braids', preis: '✓' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Das lernst du', leistung: 'Cornrows', preis: '✓' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Inklusive', leistung: 'Anerkanntes Zertifikat', preis: '✓' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Inklusive', leistung: 'Lernmaterial (Übungskopf, Kamm, Gel etc.)', preis: '✓' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Inklusive', leistung: 'Verpflegung', preis: '✓' },
+            { kategorie: 'Braiding Academy', unterkategorie: 'Hinweis', leistung: '50 % Vorauszahlung bei Anmeldung · Teilnehmerzahl begrenzt', preis: '' },
         ];
-        const FALLBACK_ICONS = ['auto_awesome', 'star', 'diamond', 'favorite', 'local_florist', 'flare'];
 
-        function getIconForCategory(name) {
-            const lower = name.toLowerCase();
-            for (const entry of ICON_KEYWORDS) {
-                if (entry.keywords.some(kw => lower.includes(kw))) return entry.icon;
-            }
-            // Fallback: rotiere durch hübsche Icons
-            const idx = Math.abs(name.split('').reduce((a, c) => a + c.charCodeAt(0), 0)) % FALLBACK_ICONS.length;
-            return FALLBACK_ICONS[idx];
-        }
+        // Icons pro Kategorie
+        const CATEGORY_ICONS = {
+            'Schnitt Styling & Farbe': 'content_cut',
+            'Braids & Zöpfe': 'gesture',
+            'Haarverlängerung': 'face_3',
+            'Braiding Academy': 'school',
+        };
 
         function makeSlug(text) {
             return text.toLowerCase().replace(/[^a-z0-9äöüß]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
         }
 
-        function parseCSV(text) {
-            const lines = text.split('\n').filter(line => line.trim());
-            const rows = [];
-            for (let i = 1; i < lines.length; i++) {
-                const row = [];
-                let current = '';
-                let inQuotes = false;
-                for (let c = 0; c < lines[i].length; c++) {
-                    if (lines[i][c] === '"') { inQuotes = !inQuotes; }
-                    else if (lines[i][c] === ',' && !inQuotes) { row.push(current.trim()); current = ''; }
-                    else { current += lines[i][c]; }
-                }
-                row.push(current.trim());
-                if (row.length >= 4 && row[0]) rows.push({ kategorie: row[0], unterkategorie: row[1] || '', leistung: row[2], preis: row[3], datum: row[4] || '' });
-            }
-            return rows;
-        }
-
-        function renderPriceRow(leistung, preis, datum) {
-            let datumHtml = '';
-            if (datum) {
-                datumHtml = `<div class="flex items-center gap-1.5 mt-1">
-                    <span class="material-symbols-outlined text-primary/70 text-sm">calendar_month</span>
-                    <span class="text-xs text-on-surface-variant">${datum}</span>
-                </div>`;
+        function renderPriceRow(leistung, preis) {
+            if (!preis) {
+                return `<div class="text-on-surface-variant/60 text-xs italic mt-4">${leistung}</div>`;
             }
             return `<div class="flex justify-between items-baseline gap-4">
-                <div>
-                    <span class="text-on-surface font-medium">${leistung}</span>
-                    ${datumHtml}
-                </div>
+                <span class="text-on-surface font-medium">${leistung}</span>
                 <span class="flex-1 border-b border-dotted border-stone-300 dark:border-stone-600 min-w-[40px] mx-2 self-end mb-1"></span>
                 <span class="text-primary font-bold whitespace-nowrap self-end">${preis}</span>
             </div>`;
@@ -1140,18 +1134,16 @@
                     html += `<h4 class="text-xs font-bold uppercase tracking-widest text-primary/60 mb-4 ${index === 0 ? 'mt-2' : 'mt-8'}">${sub}</h4>`;
                 }
                 html += '<div class="space-y-4">';
-                groups[sub].forEach(item => { html += renderPriceRow(item.leistung, item.preis, item.datum); });
+                groups[sub].forEach(item => { html += renderPriceRow(item.leistung, item.preis); });
                 html += '</div>';
             });
             return html;
         }
 
         function renderServiceCard(katName, slug, items) {
-            const icon = getIconForCategory(katName);
-            // Zeige bis zu 3 Leistungsnamen als Vorschau-Bullet-Points
-            const uniqueItems = [...new Set(items.map(i => i.leistung))];
+            const icon = CATEGORY_ICONS[katName] || 'auto_awesome';
+            const uniqueItems = [...new Set(items.filter(i => i.preis && i.preis !== '✓').map(i => i.leistung))];
             const previews = uniqueItems.slice(0, 3).map(name => {
-                // Kürze lange Namen
                 const short = name.length > 35 ? name.substring(0, 32) + '…' : name;
                 return `<li>${short}</li>`;
             }).join('\n');
@@ -1176,55 +1168,39 @@
             </div>`;
         }
 
-        async function loadServicesFromSheet() {
-            try {
-                const response = await fetch(SHEET_CSV_URL);
-                if (!response.ok) throw new Error('Sheet nicht erreichbar');
-                const csvText = await response.text();
-                const rows = parseCSV(csvText);
+        function loadServices() {
+            const categoryOrder = [];
+            const categories = {};
+            SERVICE_DATA.forEach(row => {
+                if (!categories[row.kategorie]) {
+                    categories[row.kategorie] = [];
+                    categoryOrder.push(row.kategorie);
+                }
+                categories[row.kategorie].push(row);
+            });
 
-                // Gruppiere nach Kategorie (Reihenfolge beibehalten!)
-                const categoryOrder = [];
-                const categories = {};
-                rows.forEach(row => {
-                    if (!categories[row.kategorie]) {
-                        categories[row.kategorie] = [];
-                        categoryOrder.push(row.kategorie);
-                    }
-                    categories[row.kategorie].push(row);
-                });
+            const grid = document.getElementById('services-grid');
+            const priceContainer = document.getElementById('services-pricelists');
 
-                const grid = document.getElementById('services-grid');
-                const priceContainer = document.getElementById('services-pricelists');
+            const colCount = Math.min(categoryOrder.length, 4);
+            grid.className = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${colCount} gap-4`;
 
-                // Grid-Spalten dynamisch anpassen (max 4 pro Reihe)
-                const colCount = Math.min(categoryOrder.length, 4);
-                grid.className = `grid grid-cols-1 md:grid-cols-2 lg:grid-cols-${colCount} gap-4`;
+            let cardsHTML = '';
+            let pricelistsHTML = '';
+            categoryOrder.forEach(katName => {
+                const slug = makeSlug(katName);
+                const items = categories[katName];
+                cardsHTML += renderServiceCard(katName, slug, items);
+                pricelistsHTML += renderPriceAccordion(katName, slug, items);
+            });
 
-                // Generiere Karten und Preislisten
-                let cardsHTML = '';
-                let pricelistsHTML = '';
-                categoryOrder.forEach(katName => {
-                    const slug = makeSlug(katName);
-                    const items = categories[katName];
-                    cardsHTML += renderServiceCard(katName, slug, items);
-                    pricelistsHTML += renderPriceAccordion(katName, slug, items);
-                });
+            grid.innerHTML = cardsHTML;
+            priceContainer.innerHTML = pricelistsHTML;
 
-                grid.innerHTML = cardsHTML;
-                priceContainer.innerHTML = pricelistsHTML;
-
-                // Booking-Modal Dropdown mit Kategorien befüllen
-                populateBookingServices(categoryOrder);
-
-                console.log(`✅ ${categoryOrder.length} Kategorien dynamisch aus Google Sheets geladen:`, categoryOrder);
-            } catch (error) {
-                console.warn('⚠️ Google Sheets nicht erreichbar:', error);
-                document.getElementById('services-grid').innerHTML = '<div class="col-span-full text-center py-12 text-on-surface-variant">Preisliste konnte nicht geladen werden. Bitte versuche es später erneut.</div>';
-            }
+            populateBookingServices(categoryOrder);
         }
 
-        // Akkordeon Toggle (funktioniert dynamisch für beliebige IDs)
+        // Akkordeon Toggle
         function toggleService(serviceId) {
             const allPriceLists = document.querySelectorAll('.service-pricelist');
             const allCards = document.querySelectorAll('.service-card');
@@ -1249,8 +1225,7 @@
             }
         }
 
-        // Laden wenn Seite bereit
-        document.addEventListener('DOMContentLoaded', loadServicesFromSheet);
+        document.addEventListener('DOMContentLoaded', loadServices);
     </script>
 
 </body></html>
