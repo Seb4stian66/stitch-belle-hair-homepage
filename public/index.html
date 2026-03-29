@@ -233,10 +233,38 @@
         Lernen Sie unser leidenschaftliches Team kennen — jede Stylistin bringt ihre eigene Expertise und Kreativität mit.
     </p>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-12 md:gap-16">
-    <!-- Stylistin 1 -->
+<!-- Desktop: 3 nebeneinander | Mobil: Dreieck (1 oben, 2 unten) -->
+<div class="flex flex-col items-center gap-6 md:hidden">
+    <!-- Spitze oben -->
     <div class="flex flex-col items-center group">
-        <div class="relative w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg mb-6 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
+        <div class="relative w-32 h-32 rounded-full overflow-hidden shadow-lg mb-3 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
+            <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=400&h=400&fit=crop&crop=face" alt="Fati - Inhaberin" loading="lazy" class="w-full h-full object-cover" />
+        </div>
+        <h3 class="font-headline text-base text-on-surface">Mrs. Fati</h3>
+        <p class="text-primary text-[10px] uppercase tracking-widest font-bold mt-0.5">Inhaberin & Stylistin</p>
+    </div>
+    <!-- Zwei unten -->
+    <div class="flex gap-8">
+        <div class="flex flex-col items-center group">
+            <div class="relative w-28 h-28 rounded-full overflow-hidden shadow-lg mb-3 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
+                <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop&crop=face" alt="Stylistin" loading="lazy" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-headline text-base text-on-surface">Amina K.</h3>
+            <p class="text-primary text-[10px] uppercase tracking-widest font-bold mt-0.5">Senior Stylistin</p>
+        </div>
+        <div class="flex flex-col items-center group">
+            <div class="relative w-28 h-28 rounded-full overflow-hidden shadow-lg mb-3 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
+                <img src="https://images.unsplash.com/photo-1611432579699-484f7990b127?w=400&h=400&fit=crop&crop=face" alt="Stylistin" loading="lazy" class="w-full h-full object-cover" />
+            </div>
+            <h3 class="font-headline text-base text-on-surface">Lina M.</h3>
+            <p class="text-primary text-[10px] uppercase tracking-widest font-bold mt-0.5">Stylistin & Braiding</p>
+        </div>
+    </div>
+</div>
+<!-- Desktop: Normal 3-spaltig mit Beschreibungen -->
+<div class="hidden md:grid grid-cols-3 gap-16">
+    <div class="flex flex-col items-center group">
+        <div class="relative w-52 h-52 rounded-full overflow-hidden shadow-lg mb-6 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
             <img src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?w=400&h=400&fit=crop&crop=face" alt="Fati - Inhaberin" loading="lazy" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
@@ -244,9 +272,8 @@
         <p class="text-primary text-xs uppercase tracking-widest font-bold mt-1">Inhaberin & Stylistin</p>
         <p class="text-on-surface-variant text-sm mt-3 text-center max-w-[220px]">Spezialistin für Braids, Extensions & kreative Flechtfrisuren</p>
     </div>
-    <!-- Stylistin 2 -->
     <div class="flex flex-col items-center group">
-        <div class="relative w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg mb-6 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
+        <div class="relative w-52 h-52 rounded-full overflow-hidden shadow-lg mb-6 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
             <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop&crop=face" alt="Stylistin" loading="lazy" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
@@ -254,9 +281,8 @@
         <p class="text-primary text-xs uppercase tracking-widest font-bold mt-1">Senior Stylistin</p>
         <p class="text-on-surface-variant text-sm mt-3 text-center max-w-[220px]">Expertin für Farbtechniken, Balayage & natürliche Looks</p>
     </div>
-    <!-- Stylistin 3 -->
     <div class="flex flex-col items-center group">
-        <div class="relative w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden shadow-lg mb-6 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
+        <div class="relative w-52 h-52 rounded-full overflow-hidden shadow-lg mb-6 ring-4 ring-transparent group-hover:ring-primary/30 group-hover:scale-110 transition-all duration-500">
             <img src="https://images.unsplash.com/photo-1611432579699-484f7990b127?w=400&h=400&fit=crop&crop=face" alt="Stylistin" loading="lazy" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         </div>
