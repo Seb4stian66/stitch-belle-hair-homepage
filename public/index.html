@@ -1197,42 +1197,39 @@
     <script>
         // ===== LEISTUNGSDATEN =====
         const SERVICE_DATA = [
-            // === DAMEN ===
-            { kategorie: 'Damen', unterkategorie: 'Schnitt & Styling', leistung: 'Waschen, Schneiden, Föhnen', preis: '32 €' },
-            { kategorie: 'Damen', unterkategorie: 'Farbe & Technik', leistung: 'Ansatz färben', preis: 'ab 40 €' },
-            { kategorie: 'Damen', unterkategorie: 'Farbe & Technik', leistung: 'Folien Strähne', preis: 'ab 55 €' },
-            { kategorie: 'Damen', unterkategorie: 'Farbe & Technik', leistung: 'Dauerwelle', preis: 'ab 59 €' },
-            { kategorie: 'Damen', unterkategorie: 'Behandlung', leistung: 'Hairtreatment / Haarbehandlung inkl. Stylen', preis: '45 €' },
-            { kategorie: 'Damen', unterkategorie: 'Behandlung', leistung: 'Keratin-Haarglättung', preis: 'ab 150 €' },
-            { kategorie: 'Damen', unterkategorie: 'Behandlung', leistung: 'Crochetbraids / Afrolocken', preis: '170 €' },
-            // === HERREN ===
-            { kategorie: 'Herren', unterkategorie: '', leistung: 'Trocken Haarschnitt', preis: '17,50 €' },
-            { kategorie: 'Herren', unterkategorie: '', leistung: 'Waschen, Schneiden, Föhnen', preis: '19 €' },
-            { kategorie: 'Herren', unterkategorie: '', leistung: 'Komplett-Haarrasur', preis: 'ab 13 €' },
-            { kategorie: 'Herren', unterkategorie: '', leistung: 'Vollbartrasur (Nass)', preis: 'ab 12 €' },
-            { kategorie: 'Herren', unterkategorie: '', leistung: 'Dreadloks', preis: 'ab 70 €' },
-            { kategorie: 'Herren', unterkategorie: '', leistung: 'Braids für Männer', preis: '25 – 150 €' },
-            // === KINDER ===
-            { kategorie: 'Kinder', unterkategorie: '', leistung: 'Mädchen Haarschnitt', preis: '12 €' },
-            { kategorie: 'Kinder', unterkategorie: '', leistung: 'Jungs Haarschnitt', preis: '10 €' },
-            { kategorie: 'Kinder', unterkategorie: '', leistung: 'Boxerbraids inkl. Kunsthaar (bis 12 J.)', preis: '15 €' },
-            // === EXTENSIONS ===
-            { kategorie: 'Extensions', unterkategorie: '', leistung: '100 Gramm · 40 cm inkl. Einarbeitung', preis: '265 €' },
-            { kategorie: 'Extensions', unterkategorie: '', leistung: '100 Gramm · 60 cm inkl. Einarbeitung', preis: '295 €' },
-            { kategorie: 'Extensions', unterkategorie: '', leistung: '100 Gramm · 70 cm inkl. Einarbeitung', preis: '320 €' },
-            { kategorie: 'Extensions', unterkategorie: '', leistung: 'Ponytail inkl. Einarbeitung mit Kunsthaar', preis: '50 – 80 €' },
-            { kategorie: 'Extensions', unterkategorie: '', leistung: 'Tressen hochsetzen', preis: '18,50 € / Reihe' },
-            { kategorie: 'Extensions', unterkategorie: '', leistung: 'Haarverdichtung 50 Gramm inkl. Einarbeitung', preis: '150 €' },
-            // === BRAIDS & ZÖPFE ===
-            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Braids / Rastazöpfe / Knotless / Boho-Braids', preis: '70 – 250 €' },
-            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Cornrows / Boxerbraids / Festivalfrisur', preis: '10 – 150 €' },
-            { kategorie: 'Braids & Zöpfe', unterkategorie: '', leistung: 'Fauxlocs inkl. Einarbeitung', preis: '160 – 200 €' },
-            // === EXTRAS ===
-            { kategorie: 'Extras', unterkategorie: '', leistung: 'Braut Frisur', preis: 'nach Anfrage' },
-            { kategorie: 'Extras', unterkategorie: '', leistung: 'Braut Make-up', preis: 'nach Anfrage' },
-            { kategorie: 'Extras', unterkategorie: '', leistung: 'Wimpern färben', preis: 'ab 10 €' },
-            { kategorie: 'Extras', unterkategorie: '', leistung: 'Augenbrauen färben', preis: 'ab 12 €' },
-            { kategorie: 'Extras', unterkategorie: '', leistung: 'Augenbrauen zupfen', preis: 'ab 12 €' },
+            // === DAMEN & HERREN ===
+            { kategorie: 'Damen & Herren', unterkategorie: 'Damen', leistung: 'Waschen, Schneiden, Föhnen', preis: '32 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Damen', leistung: 'Ansatz färben', preis: 'ab 40 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Damen', leistung: 'Folien Strähne', preis: 'ab 55 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Damen', leistung: 'Dauerwelle', preis: 'ab 59 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Damen', leistung: 'Hairtreatment / Haarbehandlung inkl. Stylen', preis: '45 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Damen', leistung: 'Keratin-Haarglättung', preis: 'ab 150 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Damen', leistung: 'Crochetbraids / Afrolocken', preis: '170 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Herren', leistung: 'Trocken Haarschnitt', preis: '17,50 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Herren', leistung: 'Waschen, Schneiden, Föhnen', preis: '19 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Herren', leistung: 'Komplett-Haarrasur', preis: 'ab 13 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Herren', leistung: 'Vollbartrasur (Nass)', preis: 'ab 12 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Herren', leistung: 'Dreadloks', preis: 'ab 70 €' },
+            { kategorie: 'Damen & Herren', unterkategorie: 'Herren', leistung: 'Braids für Männer', preis: '25 – 150 €' },
+            // === EXTENSIONS & BRAIDS ===
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Extensions', leistung: '100 Gramm · 40 cm inkl. Einarbeitung', preis: '265 €' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Extensions', leistung: '100 Gramm · 60 cm inkl. Einarbeitung', preis: '295 €' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Extensions', leistung: '100 Gramm · 70 cm inkl. Einarbeitung', preis: '320 €' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Extensions', leistung: 'Ponytail inkl. Einarbeitung mit Kunsthaar', preis: '50 – 80 €' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Extensions', leistung: 'Tressen hochsetzen', preis: '18,50 € / Reihe' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Extensions', leistung: 'Haarverdichtung 50 Gramm inkl. Einarbeitung', preis: '150 €' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Braids & Zöpfe', leistung: 'Braids / Rastazöpfe / Knotless / Boho-Braids', preis: '70 – 250 €' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Braids & Zöpfe', leistung: 'Cornrows / Boxerbraids / Festivalfrisur', preis: '10 – 150 €' },
+            { kategorie: 'Extensions & Braids', unterkategorie: 'Braids & Zöpfe', leistung: 'Fauxlocs inkl. Einarbeitung', preis: '160 – 200 €' },
+            // === EXTRAS & KINDER ===
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Kinder', leistung: 'Mädchen Haarschnitt', preis: '12 €' },
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Kinder', leistung: 'Jungs Haarschnitt', preis: '10 €' },
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Kinder', leistung: 'Boxerbraids inkl. Kunsthaar (bis 12 J.)', preis: '15 €' },
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Beauty & Braut', leistung: 'Braut Frisur', preis: 'nach Anfrage' },
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Beauty & Braut', leistung: 'Braut Make-up', preis: 'nach Anfrage' },
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Beauty & Braut', leistung: 'Wimpern färben', preis: 'ab 10 €' },
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Beauty & Braut', leistung: 'Augenbrauen färben', preis: 'ab 12 €' },
+            { kategorie: 'Extras & Kinder', unterkategorie: 'Beauty & Braut', leistung: 'Augenbrauen zupfen', preis: 'ab 12 €' },
             // === BRAIDING ACADEMY ===
             { kategorie: 'Braiding Academy', unterkategorie: '', leistung: 'Braids Schulung für Anfänger (1 Tag)', preis: '399 €' },
             { kategorie: 'Braiding Academy', unterkategorie: '', leistung: 'Individuell buchbar — Termin telefonisch vereinbaren', preis: '' },
@@ -1248,12 +1245,9 @@
 
         // Icons pro Kategorie
         const CATEGORY_ICONS = {
-            'Damen': 'face_3',
-            'Herren': 'face_6',
-            'Kinder': 'child_care',
-            'Extensions': 'straighten',
-            'Braids & Zöpfe': 'gesture',
-            'Extras': 'spa',
+            'Damen & Herren': 'content_cut',
+            'Extensions & Braids': 'gesture',
+            'Extras & Kinder': 'spa',
             'Braiding Academy': 'school',
         };
 
